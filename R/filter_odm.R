@@ -17,5 +17,4 @@ filter_odm <- function(matrix_data, target_df, filter_attribute, filter_value) {
     #dplyr::mutate(across(where(is.numeric), as.character)) %>%
     dplyr::pull(1)
   mat_subset <- subset(matrix_data, select = ids)
-  return(mat_subset)
 }
