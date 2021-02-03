@@ -1,1 +1,2 @@
-# odmind readme for general usage descriptions
+# Calculate Origin-Destination Matrix Accessibility Indicators
+## more information follows
