@@ -21,7 +21,15 @@
 create_time_distance_n_by_cat_sf <- function(odm_object, source_sf, target_df,
                                              filter_attribute, filter_value,
                                              n) {
-  nearest_target_dist <- identify_n_nearest_targets_by_cat(odm_object, "distance", target_df, filter_attribute, filter_value, n)
-  nearest_target_time <- identify_n_nearest_targets_by_cat(odm_object, "duration", target_df, filter_attribute, filter_value, n)
-  res_sf <- build_n_sf(source_sf, nearest_target_dist, nearest_target_time, target_df, n)
+  nearest_target_dist <-
+    identify_n_nearest_targets_by_cat(
+      odm_object, "distance", target_df,
+      filter_attribute, filter_value, n
+    )
+  nearest_target_time <-
+    identify_n_nearest_targets_by_cat(
+      odm_object, "duration", target_df,
+      filter_attribute, filter_value, n
+    )
+  build_n_sf(source_sf, nearest_target_dist, nearest_target_time,target_df, n)
 }

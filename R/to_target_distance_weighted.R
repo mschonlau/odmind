@@ -9,9 +9,10 @@
 #' @return A tibble
 #' @export
 #'
-to_target_distance_weighted <- function(out_mat, odm_object, time_distance_value, ors_profile) {
+to_target_distance_weighted <- function(out_mat, odm_object,
+                                        time_distance_value, ors_profile) {
   x <- switch_names(out_mat, odm_object) %>%
-    format_results(.) %>%
-    dplyr::filter(value <= time_distance_value) %>%
-    weight_targets_by_distance(., ors_profile)
+    format_results(.data) %>%
+    dplyr::filter(.data$value <= time_distance_value) %>%
+    weight_targets_by_distance(.data, ors_profile)
 }

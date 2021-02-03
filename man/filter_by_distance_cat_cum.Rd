@@ -7,7 +7,7 @@
 filter_by_distance_cat_cum(
   odm_object,
   distance_value,
-  search_direction_str,
+  search_direction,
   target_df,
   filter_attribute,
   filter_value
@@ -19,14 +19,14 @@ matrices and the source and target locations}
 
 \item{distance_value}{A numeric value of meters}
 
+\item{search_direction}{A character string, "to_target" or "from_target"}
+
 \item{target_df}{data.frame containing the targets with coordinates
 in separate x, y columns}
 
 \item{filter_attribute}{A category column to subset the targets}
 
 \item{filter_value}{A string with a specific category value}
-
-\item{search_direction}{A character string, "to_target" or "from_target"}
 }
 \value{
 A tibble with a count of sources for each target id for all features

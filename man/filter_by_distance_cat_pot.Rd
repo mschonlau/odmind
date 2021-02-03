@@ -18,6 +18,8 @@ filter_by_distance_cat_pot(
 \item{odm_object}{odm-object of type list encompassing duration and distance
 matrices and the source and target locations}
 
+\item{distance_value}{A numeric value of meters}
+
 \item{search_direction}{A character string, "to_target" or "from_target"}
 
 \item{target_df}{data.frame containing the targets with coordinates
@@ -27,7 +29,7 @@ in separate x, y columns}
 
 \item{filter_value}{A string with a specific category value}
 
-\item{time_value}{A numeric value of meters}
+\item{ors_profile}{Route profile}
 }
 \value{
 A tibble with a weighted value of sources for each target id for all

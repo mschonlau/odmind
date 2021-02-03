@@ -12,5 +12,5 @@ aggregate_accumulation <- function(aoi_sf, pnt_sf, id_col, crs) {
   data_list <- read_inputs(aoi_sf, pnt_sf, id_col, crs)
   aoi <- data_list[[1]]
   pnt <- data_list[[2]]
-  aggregated_sf <- calc_aoi_accumulation(aoi, pnt)
+  calc_aoi_accumulation(aoi, pnt)
 }

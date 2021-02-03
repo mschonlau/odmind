@@ -9,11 +9,15 @@
 #' @export
 #'
 
-format_results_by_cat <- function(matrix_object, target_df, filter_attribute, filter_value) {
-  filtered_matrix <- filterMatrixResults(matrix_object, target_df, filter_attribute, filter_value)
+format_results_by_cat <- function(matrix_object, target_df,
+                                  filter_attribute, filter_value) {
+  filtered_matrix <- filter_odm(
+    matrix_object, target_df,
+    filter_attribute, filter_value
+  )
   x <- filtered_matrix %>%
-    tibble::as_tibble(., rownames=NA) %>%
-    tibble::rownames_to_column(., "ID") %>%
-    dplyr::mutate(ID = as.numeric(ID)) %>%
-    tidyr::pivot_longer(-ID, names_to="target_id", values_to = "value")
+    tibble::as_tibble(.data, rownames = NA) %>%
+    tibble::rownames_to_column(.data, "ID") %>%
+    dplyr::mutate(ID = as.numeric(.data$ID)) %>%
+    tidyr::pivot_longer(-.data$ID, names_to = "target_id", values_to = "value")
 }

@@ -9,12 +9,14 @@
 #'
 calc_aoi_potential <- function(aoi_sf, pnt_sf) {
   aggregated_values <- aoi_sf %>%
-    sf::st_join(., pnt_sf, join = st_intersects) %>%
-    sf::st_set_geometry(., NULL) %>%
-    dplyr::group_by(across(1)) %>%
-    dplyr::summarise(MeanCnt = mean(target_pot),
-                     MedianCnt = median(target_pot))
+    sf::st_join(.data, pnt_sf, join = sf::st_intersects) %>%
+    sf::st_set_geometry(.data, NULL) %>%
+    dplyr::group_by(dplyr::across(1)) %>%
+    dplyr::summarise(
+      MeanCnt = mean(.data$target_pot, na.rm = TRUE),
+      MedianCnt = stats::median(.data$target_pot, na.rm = TRUE)
+    )
   out_sf <- aoi_sf %>%
-    dplyr::left_join(., aggregated_values) %>%
-    replace(., is.na(.), -1)
+    dplyr::left_join(.data, aggregated_values) %>%
+    replace(.data, is.na(.data), -1)
 }

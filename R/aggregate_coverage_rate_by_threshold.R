@@ -11,10 +11,12 @@
 #' target potentials
 #' @export
 #'
-aggregate_coverage_rate_by_threshold <- function(aoi_sf, pnt_sf, id_col, crs, threshold_col, threshold_value) {
+aggregate_coverage_rate_by_threshold <- function(aoi_sf, pnt_sf, id_col,
+                                                 crs, threshold_col,
+                                                 threshold_value) {
   data_list <- read_inputs(aoi_sf, pnt_sf, id_col, crs)
   aoi <- data_list[[1]]
   pnt <- data_list[[2]]
   intermediate_pnts <- apply_threshold(pnt, threshold_col, threshold_value)
-  aggregated_sf <- calc_aoi_coverage_rate(aoi, intermediate_pnts, id_col)
+  calc_aoi_coverage_rate(aoi, intermediate_pnts, id_col)
 }

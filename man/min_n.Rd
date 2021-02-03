@@ -12,7 +12,8 @@ min_n(x, n = 1)
 \item{n}{An integer defining the number of minimum values to be extracted}
 }
 \value{
-
+A vector of length at most n with the indices of the n smaller
+elements.
 }
 \description{
 min_n

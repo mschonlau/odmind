@@ -12,7 +12,7 @@ read_inputs <- function(aoi_sf, pnt_sf, id_col, crs = 4647) {
   crs <- crs
   aoi <- aoi_sf %>%
     sf::st_transform(crs) %>%
-    sf::st_zm(drop=T, what='ZM') %>%
+    sf::st_zm(drop = TRUE, what = "ZM") %>%
     dplyr::select(id_col)
   pnt <- pnt_sf %>%
     sf::st_transform(crs) %>%

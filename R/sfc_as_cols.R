@@ -16,6 +16,6 @@ sfc_as_cols <- function(x, names = c("x", "y")) {
   coords <- tibble::as_tibble(coords)
   stopifnot(length(names) == ncol(coords))
   x <- x[, !names(x) %in% names]
-  coords <- setNames(coords, names)
+  coords <- stats::setNames(coords, names)
   dplyr::bind_cols(x, coords)
 }

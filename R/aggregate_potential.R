@@ -9,9 +9,9 @@
 #' target potentials
 #' @export
 #'
-aggregate_potential <- function(aoi_sf, pnt_sf, id_col) {
+aggregate_potential <- function(aoi_sf, pnt_sf, id_col, crs) {
   data_list <- read_inputs(aoi_sf, pnt_sf, id_col, crs)
   aoi <- data_list[[1]]
   pnt <- data_list[[2]]
-  aggregated_sf <- calc_aoi_potential(aoi, pnt)
+  calc_aoi_potential(aoi, pnt)
 }

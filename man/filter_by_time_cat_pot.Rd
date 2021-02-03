@@ -28,10 +28,12 @@ in separate x, y columns}
 \item{filter_attribute}{A category column to subset the targets}
 
 \item{filter_value}{A string with a specific category value}
+
+\item{ors_profile}{Route profile}
 }
 \value{
-A tibble with a weighted value of sources for each target id for all features
-matching the applied filters
+A tibble with a weighted value of sources for each target id for all
+features matching the applied filters
 }
 \description{
 filter_by_time_cat_pot

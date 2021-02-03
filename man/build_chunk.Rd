@@ -12,7 +12,7 @@ build_chunk(coord_list, max_chunk_size)
 \item{max_chunk_size}{An integer value defining the maximum chunk size}
 }
 \value{
-
+A list
 }
 \description{
 build_chunk

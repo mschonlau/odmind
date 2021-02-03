@@ -17,15 +17,23 @@
 #' @export
 #' @importFrom dplyr "%>%"
 
-create_cumulative_sf <- function(odm_object, sources_sf, target_df,
+create_cumulative_sf <- function(odm_object, source_sf, target_df,
                                  filter_value_type, accessibility_filter_value,
                                  search_direction) {
   if (filter_value_type == "time") {
-    target_cnt_df <- filter_by_time_cum(odm_object, accessibility_filter_value, search_direction)
-    res_sf <- format_cum_out_to_target_sf(sources_sf, target_cnt_df)
+    target_cnt_df <- filter_by_time_cum(
+      odm_object,
+      accessibility_filter_value,
+      search_direction
+    )
+    format_cum_out_to_target_sf(source_sf, target_cnt_df)
   }
   else {
-    target_cnt_df <- filter_by_distance_cum(odm_object, accessibility_filter_value, search_direction)
-    res_sf <- format_cum_out_from_target_sf(target_df, target_cnt_df)
+    target_cnt_df <- filter_by_distance_cum(
+      odm_object,
+      accessibility_filter_value,
+      search_direction
+    )
+    format_cum_out_from_target_sf(target_df, target_cnt_df)
   }
 }

@@ -11,10 +11,11 @@
 #'
 merge_indicators <- function(aoi_sf, id_col, ...) {
   indicator_sf_list <- list(...)
-  tbl_df_list <- lapply(indicator_sf_list, function(x) st_set_geometry(x, NULL))
+  tbl_df_list <-
+    lapply(indicator_sf_list, function(x) sf::st_set_geometry(x, NULL))
   merged_tbl_df <- tbl_df_list %>%
-    purrr::reduce(left_join, by = id_col)
+    purrr::reduce(dplyr::left_join, by = id_col)
   out_sf <- aoi_sf %>%
-    dplyr::left_join(., merged_tbl_df)
+    dplyr::left_join(.data, merged_tbl_df)
   return(out_sf)
 }

@@ -11,5 +11,5 @@ apply_foot_walking_decay_distance <- function(distance_value) {
   c <- 4.4194249202824070
   d <- 18.571799184028070
   f <- -20.125818369784888
-  y <- a * exp(-0.5 * ((log((distance_value-f)/b) / c) ^ d))
+  a * exp(-0.5 * ((log((distance_value - f) / b) / c)^d))
 }

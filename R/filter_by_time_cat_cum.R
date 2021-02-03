@@ -13,13 +13,20 @@
 #' matching the applied filters
 #' @export
 #'
-filter_by_time_cat_cum <- function(odm_object, time_value, search_direction, target_df, filter_attribute, filter_value) {
+filter_by_time_cat_cum <- function(odm_object, time_value, search_direction,
+                                   target_df, filter_attribute, filter_value) {
   if (search_direction == "to_target") {
     x <- odm_object[["duration"]] %>%
-      to_target_by_cat(., odm_object, time_value, target_df, filter_attribute, filter_value)
+      to_target_by_cat(
+        .data, odm_object, time_value, target_df,
+        filter_attribute, filter_value
+      )
   }
   else {
     x <- odm_object[["duration"]] %>%
-      from_target_by_cat(., odm_object, time_value, target_df, filter_attribute, filter_value)
+      from_target_by_cat(
+        .data, odm_object, time_value, target_df,
+        filter_attribute, filter_value
+      )
   }
 }

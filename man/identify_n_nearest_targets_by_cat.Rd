@@ -14,6 +14,9 @@ identify_n_nearest_targets_by_cat(
 )
 }
 \arguments{
+\item{odm_object}{of type list encompassing duration and distance
+matrices and the source and target locations}
+
 \item{matrix_property}{A string, "distance" or "duration"}
 
 \item{target_df}{data.frame containing the targets with coordinates
@@ -25,9 +28,6 @@ in separate x, y columns}
 
 \item{n}{An integer defining the number of minimum values to be
 extracted}
-
-\item{odm-object}{of type list encompassing duration and distance
-matrices and the source and target locations}
 }
 \value{
 A tibble with n minimum distances or durations for all features

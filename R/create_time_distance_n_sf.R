@@ -18,5 +18,5 @@
 create_time_distance_n_sf <- function(odm_object, source_sf, target_df, n) {
   nearest_target_dist <- identify_n_nearest_targets(odm_object, "distance", n)
   nearest_target_time <- identify_n_nearest_targets(odm_object, "duration", n)
-  res_sf <- build_n_sf(source_sf, nearest_target_dist, nearest_target_time, target_df, n)
+  build_n_sf(source_sf, nearest_target_dist, nearest_target_time,target_df, n)
 }

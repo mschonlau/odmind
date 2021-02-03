@@ -10,7 +10,7 @@ create_potential_sf(
   target_df,
   filter_value_type,
   accessibility_filter_value,
-  search_direction = "toTarget",
+  search_direction,
   ors_profile
 )
 }

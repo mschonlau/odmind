@@ -13,6 +13,9 @@ identify_nearest_target_by_cat(
 )
 }
 \arguments{
+\item{odm_object}{of type list encompassing duration and distance
+matrices and the source and target locations}
+
 \item{matrix_property}{A string, "distance" or "duration"}
 
 \item{target_df}{data.frame containing the targets with coordinates
@@ -21,9 +24,6 @@ in separate x, y columns}
 \item{filter_attribute}{A category column to subset the targets}
 
 \item{filter_value}{A string with a specific category value}
-
-\item{odm-object}{of type list encompassing duration and distance
-matrices and the source and target locations}
 }
 \value{
 A tibble with the minimum distance or duration for all features

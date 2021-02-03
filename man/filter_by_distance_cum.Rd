@@ -10,9 +10,9 @@ filter_by_distance_cum(odm_object, distance_value, search_direction)
 \item{odm_object}{odm-object of type list encompassing duration and distance
 matrices and the source and target locations}
 
-\item{search_direction}{A character string, "to_target" or "from_target"}
+\item{distance_value}{A numeric value of meters}
 
-\item{time_value}{A numeric value of meters}
+\item{search_direction}{A character string, "to_target" or "from_target"}
 }
 \value{
 A tibble with a count of sources for each target id or

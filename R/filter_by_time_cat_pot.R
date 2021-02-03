@@ -8,18 +8,29 @@
 #' in separate x, y columns
 #' @param filter_attribute A category column to subset the targets
 #' @param filter_value A string with a specific category value
+#' @param ors_profile Route profile
 #'
-#' @return A tibble with a weighted value of sources for each target id for all features
-#' matching the applied filters
+#' @return A tibble with a weighted value of sources for each target id for all
+#' features matching the applied filters
 #' @export
 #'
-filter_by_time_cat_pot <- function(odm_object, time_value, search_direction, target_df, filter_attribute, filter_value, ors_profile) {
+filter_by_time_cat_pot <- function(odm_object, time_value, search_direction,
+                                   target_df, filter_attribute, filter_value,
+                                   ors_profile) {
   if (search_direction == "to_target") {
     x <- odm_object[["duration"]] %>%
-      to_target_by_cat_time_weighted(., odm_object, time_value, target_df, filter_attribute, filter_value, ors_profile)
+      to_target_by_cat_time_weighted(
+        .data, odm_object, time_value, target_df,
+        filter_attribute, filter_value,
+        ors_profile
+      )
   }
   else {
-    x <- data_source[["duration"]] %>%
-      from_target_by_cat_time_weighted(., odm_object, time_value, target_df, filter_attribute, filter_value, ors_profile)
+    x <- odm_object[["duration"]] %>%
+      from_target_by_cat_time_weighted(
+        .data, odm_object, time_value, target_df,
+        filter_attribute, filter_value,
+        ors_profile
+      )
   }
 }

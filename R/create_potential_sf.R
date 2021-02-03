@@ -17,13 +17,23 @@
 #' @return sf object of geometry type point
 #' @export
 #' @importFrom dplyr "%>%"
-create_potential_sf <- function(odm_object, source_sf, target_df, filter_value_type, accessibility_filter_value, search_direction = "toTarget", ors_profile) {
+create_potential_sf <- function(odm_object, source_sf, target_df,
+                                filter_value_type, accessibility_filter_value,
+                                search_direction, ors_profile) {
   if (filter_value_type == "time") {
-    target_pot_df <- filter_by_time_pot(odm_object, accessibility_filter_value, search_direction, ors_profile)
-    res_sf <- format_pot_out_to_target_sf(source_sf, target_pot_df)
+    target_pot_df <- filter_by_time_pot(
+      odm_object,
+      accessibility_filter_value,
+      search_direction, ors_profile
+    )
+    format_pot_out_to_target_sf(source_sf, target_pot_df)
   }
   else {
-    target_pot_df <- filter_by_distance_pot(odm_object, accessibility_filter_value, search_direction, ors_profile)
-    res_sf <- format_pot_out_from_target_sf(target_df, target_pot_df)
+    target_pot_df <- filter_by_distance_pot(
+      odm_object,
+      accessibility_filter_value,
+      search_direction, ors_profile
+    )
+    format_pot_out_from_target_sf(target_df, target_pot_df)
   }
 }

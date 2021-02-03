@@ -7,7 +7,7 @@
 get_coords_as_list(data)
 }
 \arguments{
-\item{data}{A data.frame with coordinates in x und y columns}
+\item{data}{A data.frame with coordinates in x and y columns}
 }
 \value{
 List of longitude, latitude coordinate pairs

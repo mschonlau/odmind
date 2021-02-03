@@ -8,5 +8,5 @@
 apply_driving_car_decay_time <- function(time_value) {
   a <- 0
   b <- 100
-  y <- a + (b - a)*(exp(-0.05*time_value))
+  a + (b - a) * (exp(-0.05 * time_value))
 }

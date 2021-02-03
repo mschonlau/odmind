@@ -4,14 +4,14 @@
 \alias{format_pot_out_to_target_sf}
 \title{format_pot_out_to_target_sf}
 \usage{
-format_pot_out_to_target_sf(in_sf, target_pot_df)
+format_pot_out_to_target_sf(source_sf, target_pot_df)
 }
 \arguments{
+\item{source_sf}{sf object of geometry type point containing the sources
+with coordinates in separate x, y columns}
+
 \item{target_pot_df}{A tibble with a weighted value of targets for each
 source id}
-
-\item{sources_sf}{sf object of geometry type point containing the sources
-with coordinates in separate x, y columns}
 }
 \value{
 sf object of geometry type point

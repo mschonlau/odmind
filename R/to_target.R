@@ -12,7 +12,7 @@
 #'
 to_target <- function(out_mat, odm_object, time_distance_value) {
   x <- switch_names(out_mat, odm_object) %>%
-    format_results(.) %>%
-    dplyr::filter(value <= time_distance_value) %>%
-    count_targets(.)
+    format_results(.data) %>%
+    dplyr::filter(.data$value <= time_distance_value) %>%
+    count_targets(.data)
 }

@@ -9,6 +9,6 @@
 #'
 identify_nearest_target <- function(odm_object, matrix_property) {
   mat <- odm_object[[matrix_property]] %>%
-    switch_names(., odm_object)
-  dst_mat <- get_min_values(mat)
+    switch_names(.data, odm_object)
+  get_min_values(mat)
 }

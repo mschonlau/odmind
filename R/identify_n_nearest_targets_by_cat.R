@@ -1,6 +1,6 @@
 #' identify_n_nearest_targets_by_cat
 #'
-#' @param odm-object of type list encompassing duration and distance
+#' @param odm_object of type list encompassing duration and distance
 #' matrices and the source and target locations
 #' @param matrix_property A string, "distance" or "duration"
 #' @param target_df data.frame containing the targets with coordinates
@@ -16,11 +16,11 @@
 #' @export
 #'
 identify_n_nearest_targets_by_cat <- function(odm_object, matrix_property,
-                                               target_df, filter_attribute,
-                                               filter_value, n) {
+                                              target_df, filter_attribute,
+                                              filter_value, n) {
   mat <- odm_object[[matrix_property]] %>%
-    switch_names(., odm_object)
+    switch_names(.data, odm_object)
   mat_subset <- filter_odm(mat, target_df, filter_attribute, filter_value)
-  dst_mat <- get_n_min_Values(mat_subset, n) %>%
-    average_n_min_values(., n)
+  dst_mat <- get_n_min_values(mat_subset, n) %>%
+    average_n_min_values(.data, n)
 }

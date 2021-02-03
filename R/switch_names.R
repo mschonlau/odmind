@@ -12,15 +12,15 @@
 #' @export
 #'
 switch_names <- function(out_mat, odm_object) {
-  if (!"source_id" %in% colnames(odm_object$sources) ) {
+  if (!"source_id" %in% colnames(odm_object$sources)) {
     odm_object$sources <- odm_object$sources %>%
       dplyr::mutate(source_id = dplyr::row_number()) %>%
-      dplyr::relocate(source_id)
+      dplyr::relocate(.data$source_id)
   }
-  if (!"target_id" %in% colnames(odm_object$targets) ) {
+  if (!"target_id" %in% colnames(odm_object$targets)) {
     odm_object$targets <- odm_object$targets %>%
       dplyr::mutate(target_id = dplyr::row_number()) %>%
-      dplyr::relocate(target_id)
+      dplyr::relocate(.data$target_id)
   }
   rownames(out_mat) <- odm_object$sources$source_id
   colnames(out_mat) <- odm_object$targets$target_id

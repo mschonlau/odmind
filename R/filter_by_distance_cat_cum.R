@@ -13,13 +13,21 @@
 #' matching the applied filters
 #' @export
 #'
-filter_by_distance_cat_cum <- function(odm_object, distance_value, search_direction_str, target_df, filter_attribute, filter_value) {
-  if (search_direction_str == "to_target") {
+filter_by_distance_cat_cum <- function(odm_object, distance_value,
+                                       search_direction, target_df,
+                                       filter_attribute, filter_value) {
+  if (search_direction == "to_target") {
     x <- odm_object[["distance"]] %>%
-      to_target_by_cat(., odm_object, distance_value, target_df, filter_attribute, filter_value)
+      to_target_by_cat(
+        .data, odm_object, distance_value, target_df,
+        filter_attribute, filter_value
+      )
   }
   else {
     x <- odm_object[["distance"]] %>%
-      from_target_by_cat(., odm_object, distance_value, target_df, filter_attribute, filter_value)
+      from_target_by_cat(
+        .data, odm_object, distance_value, target_df,
+        filter_attribute, filter_value
+      )
   }
 }

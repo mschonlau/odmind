@@ -7,6 +7,6 @@
 #'
 count_targets <- function(data) {
   x <- data %>%
-    dplyr::group_by(across(1)) %>%
-    dplyr::summarise(target_cnt = n(), .groups = 'drop')
+    dplyr::group_by(dplyr::across(1)) %>%
+    dplyr::summarise(target_cnt = dplyr::n(), .groups = "drop")
 }

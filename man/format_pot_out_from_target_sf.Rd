@@ -7,11 +7,11 @@
 format_pot_out_from_target_sf(target_df, target_pot_df)
 }
 \arguments{
+\item{target_df}{data.frame containing the targets with coordinates
+in separate x, y columns}
+
 \item{target_pot_df}{A tibble with a weighted value of sources for each
 target id}
-
-\item{sources_sf}{sf object of geometry type point containing the sources
-with coordinates in separate x, y columns}
 }
 \value{
 sf object of geometry type point

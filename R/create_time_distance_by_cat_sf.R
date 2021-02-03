@@ -16,8 +16,17 @@
 #' @return sf object of geometry type point
 #' @export
 #'
-create_time_distance_by_cat_sf <- function(odm_object, source_sf, target_df, filter_attribute, filter_value) {
-  nearest_target_dist <- identify_nearest_target_by_cat(odm_object, "distance", target_df, filter_attribute, filter_value)
-  nearest_target_time <- identify_nearest_target_by_cat(odm_object, "duration", target_df, filter_attribute, filter_value)
-  res_sf <- build_sf(source_sf, nearest_target_dist, nearest_target_time, target_df)
+create_time_distance_by_cat_sf <- function(odm_object, source_sf, target_df,
+                                           filter_attribute, filter_value) {
+  nearest_target_dist <-
+    identify_nearest_target_by_cat(
+      odm_object, "distance", target_df,
+      filter_attribute, filter_value
+    )
+  nearest_target_time <-
+    identify_nearest_target_by_cat(
+      odm_object, "duration", target_df,
+      filter_attribute, filter_value
+    )
+  build_sf(source_sf, nearest_target_dist, nearest_target_time, target_df)
 }

@@ -15,10 +15,12 @@ call_ors_matrix <- function(x_y_coordinates, ors_profile, sources_chunk_size,
   source_max <- sources_chunk_size - 1
   destinations_min <- sources_chunk_size
   destinations_max <- sources_chunk_size + destination_chunk_size - 1
-  ors_matrix(locations = x_y_coordinates,
-             profile = ors_profile,
-             sources = seq(0, source_max),
-             destinations = seq(destinations_min, destinations_max),
-             metrics = c("duration", "distance"),
-             units = "m")
+  ors_matrix(
+    locations = x_y_coordinates,
+    profile = ors_profile,
+    sources = seq(0, source_max),
+    destinations = seq(destinations_min, destinations_max),
+    metrics = c("duration", "distance"),
+    units = "m"
+  )
 }

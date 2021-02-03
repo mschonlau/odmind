@@ -12,9 +12,8 @@
 #'
 filter_odm <- function(matrix_data, target_df, filter_attribute, filter_value) {
   ids <- target_df %>%
-    dplyr::filter(.[[filter_attribute]] == filter_value) %>%
+    dplyr::filter(.data[[filter_attribute]] == filter_value) %>%
     dplyr::select(1) %>%
-    #dplyr::mutate(across(where(is.numeric), as.character)) %>%
     dplyr::pull(1)
-  mat_subset <- subset(matrix_data, select = ids)
+  subset(matrix_data, select = ids)
 }

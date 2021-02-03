@@ -10,13 +10,20 @@
 #' a weighted value of targets for each source id
 #' @export
 #'
-filter_by_distance_pot <- function(odm_object, distance_value, search_direction, ors_profile) {
+filter_by_distance_pot <- function(odm_object, distance_value,
+                                   search_direction, ors_profile) {
   if (search_direction == "toTarget") {
     x <- odm_object[["distance"]] %>%
-      to_target_distance_weighted(., odm_object, distance_value, ors_profile)
+      to_target_distance_weighted(
+        .data, odm_object,
+        distance_value, ors_profile
+      )
   }
   else {
     x <- odm_object[["distance"]] %>%
-      from_target_distance_weighted(., odm_object, distance_value, ors_profile)
+      from_target_distance_weighted(
+        .data, odm_object,
+        distance_value, ors_profile
+      )
   }
 }

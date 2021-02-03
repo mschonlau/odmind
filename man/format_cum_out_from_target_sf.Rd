@@ -7,10 +7,10 @@
 format_cum_out_from_target_sf(target_df, target_cnt_df)
 }
 \arguments{
-\item{target_cnt_df}{A tibble with a count of targets for each source id}
+\item{target_df}{data.frame containing the targets with coordinates
+in separate x, y columns}
 
-\item{sources_sf}{sf object of geometry type point containing the sources
-with coordinates in separate x, y columns}
+\item{target_cnt_df}{A tibble with a count of targets for each source id}
 }
 \value{
 sf object of geometry type point

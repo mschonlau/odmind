@@ -6,7 +6,7 @@
 \usage{
 create_cumulative_sf(
   odm_object,
-  sources_sf,
+  source_sf,
   target_df,
   filter_value_type,
   accessibility_filter_value,
@@ -17,6 +17,9 @@ create_cumulative_sf(
 \item{odm_object}{of type list encompassing duration and distance
 matrices and the source and target locations}
 
+\item{source_sf}{sf object of geometry type point containing the sources
+with coordinates in separate x, y columns}
+
 \item{target_df}{data.frame containing the targets with coordinates
 in separate x, y columns}
 
@@ -25,9 +28,6 @@ in separate x, y columns}
 \item{accessibility_filter_value}{A numeric value of minutes or meters}
 
 \item{search_direction}{A string, "to_targets" or "from_targets"}
-
-\item{source_sf}{sf object of geometry type point containing the sources
-with coordinates in separate x, y columns}
 }
 \value{
 sf object of geometry type point
