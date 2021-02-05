@@ -6,7 +6,7 @@
 #'
 #' @return sf of geometry type polygon including an aggregated coverage rate
 #' target potentials
-#' @export
+#' @noRd
 #'
 calc_aoi_coverage_rate <- function(aoi_sf, pnt_sf, id_col) {
   aggregated_values <- aoi_sf %>%

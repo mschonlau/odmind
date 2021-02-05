@@ -9,7 +9,7 @@
 #'
 #' @return A matrix object with corresponding ids for sources and targets
 #'
-#' @export
+#' @noRd
 #'
 switch_names <- function(out_mat, odm_object) {
   if (!"source_id" %in% colnames(odm_object$sources)) {

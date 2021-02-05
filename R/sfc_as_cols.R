@@ -7,8 +7,8 @@
 #' x and y coordinate columns
 #'
 #' @return sf object including coordinates as new columns
+#' @noRd
 #'
-#' @export
 
 sfc_as_cols <- function(x, names = c("x", "y")) {
   stopifnot(inherits(x, "sf") && inherits(sf::st_geometry(x), "sfc_POINT"))

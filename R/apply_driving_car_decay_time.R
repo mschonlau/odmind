@@ -3,7 +3,7 @@
 #' @param time_value A numeric value: minutes
 #'
 #' @return A numeric value
-#' @export
+#' @noRd
 #'
 apply_driving_car_decay_time <- function(time_value) {
   a <- 0

@@ -4,7 +4,7 @@
 #' @param ors_profile Route profile
 #'
 #' @return A tibble with count values weighted by distance
-#' @export
+#' @noRd
 #'
 weight_targets_by_distance <- function(data, ors_profile) {
   if (ors_profile == "foot-walking") {

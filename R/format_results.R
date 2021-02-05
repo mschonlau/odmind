@@ -3,7 +3,8 @@
 #' @param matrix_object A time or distance matrix
 #'
 #' @return A tibble
-#' @export
+#' @noRd
+
 #'
 format_results <- function(matrix_object) {
   x <- matrix_object %>%

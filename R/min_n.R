@@ -5,7 +5,7 @@
 #'
 #' @return A vector of length at most n with the indices of the n smaller
 #' elements.
-#' @export
+#' @noRd
 #'
 min_n <- function(x, n = 1) {
   if (n == 1) {

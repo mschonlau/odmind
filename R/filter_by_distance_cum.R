@@ -7,7 +7,7 @@
 #'
 #' @return A tibble with a count of sources for each target id or
 #' a count of targets for each source id
-#' @export
+#' @noRd
 #'
 filter_by_distance_cum <- function(odm_object, distance_value,
                                    search_direction) {

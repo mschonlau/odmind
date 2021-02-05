@@ -5,7 +5,7 @@
 #'
 #' @return sf of geometry type polygon including aggregated weighted target
 #' potentials
-#' @export
+#' @noRd
 #'
 calc_aoi_potential <- function(aoi_sf, pnt_sf) {
   aggregated_values <- aoi_sf %>%

@@ -5,7 +5,7 @@
 #' @param target_cnt_df A tibble with a count of targets for each source id
 #'
 #' @return sf object of geometry type point
-#' @export
+#' @noRd
 #'
 format_cum_out_to_target_sf <- function(sources_sf, target_cnt_df) {
   out_sf <- sources_sf %>%

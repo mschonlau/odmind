@@ -3,7 +3,7 @@
 #' @param distance_value time_value A numeric value: meters
 #'
 #' @return A numeric value
-#' @export
+#' @noRd
 #'
 apply_foot_walking_decay_distance <- function(distance_value) {
   a <- 103.09064080697681

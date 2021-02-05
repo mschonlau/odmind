@@ -8,7 +8,7 @@
 #'
 #'
 #' @return A matrix including only features matching the applied filter
-#' @export
+#' @noRd
 #'
 filter_odm <- function(matrix_data, target_df, filter_attribute, filter_value) {
   ids <- target_df %>%

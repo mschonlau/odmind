@@ -8,7 +8,7 @@
 #' in separate x, y columns
 #'
 #' @return sf object of geometry type point
-#' @export
+#' @noRd
 #'
 build_sf <- function(source_sf, nearest_target_dist,
                      nearest_target_time, target_df) {

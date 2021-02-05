@@ -11,7 +11,7 @@
 #' @param ors_profile Route profile
 #'
 #' @return A tibble
-#' @export
+#' @noRd
 #'
 to_target_by_cat_time_weighted <- function(out_mat, odm_object,
                                            time_distance_value, target_df,

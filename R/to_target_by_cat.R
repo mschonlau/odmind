@@ -12,7 +12,7 @@
 #'
 #' @return A tibble with a count of targets for each source id for all features
 #' matching the applied filter
-#' @export
+#' @noRd
 #'
 to_target_by_cat <- function(out_mat, odm_object, time_distance_value,
                              target_df, filter_attribute, filter_value) {

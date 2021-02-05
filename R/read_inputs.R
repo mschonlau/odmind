@@ -6,7 +6,7 @@
 #' @param crs epsg code
 #'
 #' @return A list object
-#' @export
+#' @noRd
 #'
 read_inputs <- function(aoi_sf, pnt_sf, id_col, crs = 4647) {
   crs <- crs

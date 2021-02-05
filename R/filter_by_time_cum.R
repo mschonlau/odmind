@@ -7,7 +7,7 @@
 #'
 #' @return A tibble with a count of sources for each target id or
 #' a count of targets for each source id
-#' @export
+#' @noRd
 #'
 filter_by_time_cum <- function(odm_object, time_value, search_direction) {
   if (search_direction == "to_target") {

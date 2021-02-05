@@ -12,7 +12,7 @@
 #'
 #' @return A tibble with a weighted value of sources for each target id for all
 #' features matching the applied filters
-#' @export
+#' @noRd
 #'
 filter_by_time_cat_pot <- function(odm_object, time_value, search_direction,
                                    target_df, filter_attribute, filter_value,

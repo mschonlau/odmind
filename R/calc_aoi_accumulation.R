@@ -4,7 +4,7 @@
 #' @param pnt_sf sf of geometry type point including attribute to be aggregated
 #'
 #' @return sf of geometry type polygon including aggregated target counts
-#' @export
+#' @noRd
 #'
 calc_aoi_accumulation <- function(aoi_sf, pnt_sf) {
   aggregated_values <- aoi_sf %>%

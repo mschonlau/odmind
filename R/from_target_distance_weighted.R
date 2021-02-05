@@ -7,7 +7,7 @@
 #' @param ors_profile Route profile
 #'
 #' @return A tibble
-#' @export
+#' @noRd
 #'
 from_target_distance_weighted <- function(out_mat, odm_object,
                                           time_distance_value, ors_profile) {

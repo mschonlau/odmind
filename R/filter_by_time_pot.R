@@ -8,7 +8,7 @@
 #'
 #' @return A tibble with a weighted value of sources for each target id or
 #' a weighted value of targets for each source id
-#' @export
+#' @noRd
 #'
 filter_by_time_pot <- function(odm_object, time_value,
                                search_direction, ors_profile) {

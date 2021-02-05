@@ -3,7 +3,7 @@
 #' @param data A tibble
 #'
 #' @return A tibble with a count of targets for each id
-#' @export
+#' @noRd
 #'
 count_targets <- function(data) {
   x <- data %>%

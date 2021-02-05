@@ -10,7 +10,7 @@
 #'
 #' @return A tibble with the minimum distance or duration for all features
 #' matching the applied filter
-#' @export
+#' @noRd
 #'
 identify_nearest_target_by_cat <- function(odm_object, matrix_property,
                                            target_df, filter_attribute,

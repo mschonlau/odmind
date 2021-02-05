@@ -6,7 +6,7 @@
 #' target id
 #'
 #' @return sf object of geometry type point
-#' @export
+#' @noRd
 #'
 format_pot_out_from_target_sf <- function(target_df, target_pot_df) {
   in_sf <- sf::st_as_sf(target_df, coords = c("x", "y"))

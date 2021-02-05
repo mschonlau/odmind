@@ -5,7 +5,7 @@
 #' @param matrix_property A string, "distance" or "duration"
 #'
 #' @return A tibble with the minimum distance or duration for each feature
-#' @export
+#' @noRd
 #'
 identify_nearest_target <- function(odm_object, matrix_property) {
   mat <- odm_object[[matrix_property]] %>%

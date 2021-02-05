@@ -4,7 +4,7 @@
 #' @param max_chunk_size An integer value defining the maximum chunk size
 #'
 #' @return A list
-#' @export
+#' @noRd
 #'
 build_chunk <- function(coord_list, max_chunk_size) {
   coord_list_len <- length(coord_list)

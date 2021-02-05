@@ -7,7 +7,7 @@
 #'
 #' @return A tibble including a new column of average distances or durations for
 #' each feature
-#' @export
+#' @noRd
 #' @importFrom rlang .data
 #'
 average_n_min_values <- function(min_values_df, n_vals) {

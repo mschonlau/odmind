@@ -8,7 +8,7 @@
 #' @param destination_chunk_size integer value to identify the targets
 #'
 #' @return Duration and distance matrix for multiple sources and targets
-#' @export
+#' @noRd
 #'
 call_ors_matrix <- function(x_y_coordinates, ors_profile, sources_chunk_size,
                             destination_chunk_size) {

@@ -8,7 +8,7 @@
 #' threshold filter value
 #'
 #' @return A tibble with a count of targets for each source id
-#' @export
+#' @noRd
 #'
 to_target <- function(out_mat, odm_object, time_distance_value) {
   x <- switch_names(out_mat, odm_object) %>%

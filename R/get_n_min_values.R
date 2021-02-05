@@ -5,7 +5,7 @@
 #' extracted
 #'
 #' @return A tibble with n minimum distances or durations for each feature
-#' @export
+#' @noRd
 #'
 get_n_min_values <- function(matrix_data, n_vals) {
   sources_id_col <- n_vals + 1

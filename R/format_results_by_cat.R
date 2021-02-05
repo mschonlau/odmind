@@ -6,7 +6,7 @@
 #' @param filter_value A string with a specific category value
 #'
 #' @return A tibble
-#' @export
+#' @noRd
 #'
 
 format_results_by_cat <- function(matrix_object, target_df,

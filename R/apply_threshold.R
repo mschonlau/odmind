@@ -5,7 +5,7 @@
 #' @param value A numeric threshold value
 #'
 #' @return sf of geometry type point
-#' @export
+#' @noRd
 #'
 apply_threshold <- function(pnt_sf, threshold_col, value) {
   out_pnts <- pnt_sf %>%

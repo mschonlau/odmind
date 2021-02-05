@@ -6,7 +6,7 @@
 #' source id
 #'
 #' @return sf object of geometry type point
-#' @export
+#' @noRd
 #'
 format_pot_out_to_target_sf <- function(source_sf, target_pot_df) {
   out_sf <- source_sf %>%

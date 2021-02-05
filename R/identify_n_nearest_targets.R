@@ -8,7 +8,7 @@
 #'
 #' @return A tibble with n minimum distances or durations for each feature and
 #' average distances or durations for each feature
-#' @export
+#' @noRd
 #'
 identify_n_nearest_targets <- function(odm_object, matrix_property, n) {
   mat <- odm_object[[matrix_property]] %>%

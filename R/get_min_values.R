@@ -3,7 +3,8 @@
 #' @param matrix_data Distance or duration matrix
 #'
 #' @return A tibble with the minimum distance or duration for each feature
-#' @export
+#' @noRd
+#'
 get_min_values <- function(matrix_data) {
   dst_mat <- t(sapply(seq(nrow(matrix_data)), function(i) {
     j <- which.min(matrix_data[i, ])

@@ -5,7 +5,7 @@
 #'
 #' @return sf of geometry type polygon including aggregated distance and time
 #' values
-#' @export
+#' @noRd
 #'
 calc_aoi_expenses <- function(aoi_sf, pnt_sf) {
   aggregated_values <- aoi_sf %>%

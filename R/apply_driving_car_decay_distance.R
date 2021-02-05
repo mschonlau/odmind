@@ -3,7 +3,7 @@
 #' @param distance_value A numeric value: meters
 #'
 #' @return A numeric value
-#' @export
+#' @noRd
 #'
 apply_driving_car_decay_distance <- function(distance_value) {
   a <- 0

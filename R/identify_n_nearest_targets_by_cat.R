@@ -13,7 +13,7 @@
 #' @return A tibble with n minimum distances or durations for all features
 #' matching the applied filter and average distances or durations for each
 #' feature
-#' @export
+#' @noRd
 #'
 identify_n_nearest_targets_by_cat <- function(odm_object, matrix_property,
                                               target_df, filter_attribute,
