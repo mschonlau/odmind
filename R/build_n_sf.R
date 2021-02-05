@@ -17,7 +17,7 @@
 build_n_sf <- function(source_sf, nearest_target_dist,
                        nearest_target_time, target_df, n) {
   res_sf <- source_sf %>%
-    dplyr::left_join(.data, nearest_target_dist,
+    dplyr::left_join(nearest_target_dist,
       by = c("source_id" = "source_id")
     ) %>%
     dplyr::rename(MeanDist = .data$MeanVal) %>%
@@ -29,7 +29,7 @@ build_n_sf <- function(source_sf, nearest_target_dist,
       .data$source_id, .data$MeanDist,
       dplyr::contains("MinDist")
     ) %>%
-    dplyr::left_join(.data, nearest_target_time,
+    dplyr::left_join(nearest_target_time,
       by = c("source_id" = "source_id")
     ) %>%
     dplyr::rename(MeanTime = .data$MeanVal) %>%

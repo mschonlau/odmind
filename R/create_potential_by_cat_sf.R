@@ -32,7 +32,6 @@ create_potential_by_cat_sf <- function(odm_object, source_sf, target_df,
         search_direction, target_df, filter_attribute,
         filter_value, ors_profile
       )
-    format_pot_out_to_target_sf(source_sf, target_pot_df)
   }
   else {
     target_pot_df <-
@@ -41,6 +40,11 @@ create_potential_by_cat_sf <- function(odm_object, source_sf, target_df,
         search_direction, target_df, filter_attribute,
         filter_value, ors_profile
       )
+  }
+  if (search_direction == "to_target") {
+    format_pot_out_to_target_sf(source_sf, target_pot_df)
+  }
+  else {
     format_pot_out_from_target_sf(target_df, target_pot_df)
   }
 }

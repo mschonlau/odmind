@@ -6,9 +6,10 @@
 #'
 #' @return A tibble with the minimum distance or duration for each feature
 #' @noRd
-#'
+#' @importFrom rlang .data
+
 identify_nearest_target <- function(odm_object, matrix_property) {
   mat <- odm_object[[matrix_property]] %>%
-    switch_names(.data, odm_object)
+    switch_names(odm_object)
   get_min_values(mat)
 }

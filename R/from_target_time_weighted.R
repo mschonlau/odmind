@@ -12,11 +12,11 @@
 from_target_time_weighted <- function(out_mat, odm_object,
                                       time_distance_value, ors_profile) {
   x <- switch_names(out_mat, odm_object) %>%
-    t(.data) %>%
-    format_results(.data) %>%
+    t() %>%
+    format_results() %>%
     dplyr::filter(.data$value <= time_distance_value) %>%
     dplyr::select(.data$target_id, .data$value) %>%
     dplyr::mutate(dplyr::across(where(is.character), as.numeric)) %>%
-    weight_targets_by_time(.data, ors_profile)
+    weight_targets_by_time(ors_profile)
 }
 utils::globalVariables(c("where"))

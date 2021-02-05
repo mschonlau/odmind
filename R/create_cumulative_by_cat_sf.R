@@ -31,7 +31,6 @@ create_cumulative_by_cat_sf <- function(odm_object, source_sf, target_df,
         search_direction, target_df,
         filter_attribute, filter_value
       )
-    format_cum_out_to_target_sf(source_sf, target_cnt_df)
   }
   else {
     target_cnt_df <-
@@ -40,6 +39,11 @@ create_cumulative_by_cat_sf <- function(odm_object, source_sf, target_df,
         search_direction, target_df,
         filter_attribute, filter_value
       )
+  }
+  if (search_direction == "to_target") {
+    format_cum_out_to_target_sf(source_sf, target_cnt_df)
+  }
+  else {
     format_cum_out_from_target_sf(target_df, target_cnt_df)
   }
 }

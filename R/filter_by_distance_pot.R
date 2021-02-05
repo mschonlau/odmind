@@ -15,15 +15,13 @@ filter_by_distance_pot <- function(odm_object, distance_value,
   if (search_direction == "toTarget") {
     x <- odm_object[["distance"]] %>%
       to_target_distance_weighted(
-        .data, odm_object,
-        distance_value, ors_profile
+        odm_object, distance_value, ors_profile
       )
   }
   else {
     x <- odm_object[["distance"]] %>%
       from_target_distance_weighted(
-        .data, odm_object,
-        distance_value, ors_profile
+        odm_object, distance_value, ors_profile
       )
   }
 }

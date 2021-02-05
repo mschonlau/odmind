@@ -19,14 +19,14 @@ filter_by_distance_cat_cum <- function(odm_object, distance_value,
   if (search_direction == "to_target") {
     x <- odm_object[["distance"]] %>%
       to_target_by_cat(
-        .data, odm_object, distance_value, target_df,
+        odm_object, distance_value, target_df,
         filter_attribute, filter_value
       )
   }
   else {
     x <- odm_object[["distance"]] %>%
       from_target_by_cat(
-        .data, odm_object, distance_value, target_df,
+        odm_object, distance_value, target_df,
         filter_attribute, filter_value
       )
   }

@@ -18,14 +18,14 @@ filter_by_time_cat_cum <- function(odm_object, time_value, search_direction,
   if (search_direction == "to_target") {
     x <- odm_object[["duration"]] %>%
       to_target_by_cat(
-        .data, odm_object, time_value, target_df,
+        odm_object, time_value, target_df,
         filter_attribute, filter_value
       )
   }
   else {
     x <- odm_object[["duration"]] %>%
       from_target_by_cat(
-        .data, odm_object, time_value, target_df,
+        odm_object, time_value, target_df,
         filter_attribute, filter_value
       )
   }

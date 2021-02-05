@@ -6,10 +6,11 @@
 #'
 #' @return sf object of geometry type point
 #' @noRd
+#' @importFrom rlang .data
 #'
 format_cum_out_from_target_sf <- function(target_df, target_cnt_df) {
   in_sf <- sf::st_as_sf(target_df, coords = c("x", "y"))
   out_sf <- in_sf %>%
-    dplyr::left_join(.data, target_cnt_df, by = c("target_id" = "target_id")) %>%
+    dplyr::left_join(target_cnt_df, by = c("target_id" = "target_id")) %>%
     dplyr::select(.data$target_id, source_cnt = .data$target_cnt)
 }

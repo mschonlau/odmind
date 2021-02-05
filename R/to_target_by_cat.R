@@ -17,7 +17,7 @@
 to_target_by_cat <- function(out_mat, odm_object, time_distance_value,
                              target_df, filter_attribute, filter_value) {
   x <- switch_names(out_mat, odm_object) %>%
-    format_results_by_cat(.data, target_df, filter_attribute, filter_value) %>%
+    format_results_by_cat(target_df, filter_attribute, filter_value) %>%
     dplyr::filter(.data$value <= time_distance_value) %>%
-    count_targets(.data)
+    count_targets()
 }

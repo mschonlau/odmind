@@ -12,7 +12,7 @@
 #'
 identify_n_nearest_targets <- function(odm_object, matrix_property, n) {
   mat <- odm_object[[matrix_property]] %>%
-    switch_names(.data, odm_object)
+    switch_names(odm_object)
   dst_mat <- get_n_min_values(mat, n) %>%
-    average_n_min_values(.data, n)
+    average_n_min_values(n)
 }

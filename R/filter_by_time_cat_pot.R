@@ -20,7 +20,7 @@ filter_by_time_cat_pot <- function(odm_object, time_value, search_direction,
   if (search_direction == "to_target") {
     x <- odm_object[["duration"]] %>%
       to_target_by_cat_time_weighted(
-        .data, odm_object, time_value, target_df,
+        odm_object, time_value, target_df,
         filter_attribute, filter_value,
         ors_profile
       )
@@ -28,7 +28,7 @@ filter_by_time_cat_pot <- function(odm_object, time_value, search_direction,
   else {
     x <- odm_object[["duration"]] %>%
       from_target_by_cat_time_weighted(
-        .data, odm_object, time_value, target_df,
+        odm_object, time_value, target_df,
         filter_attribute, filter_value,
         ors_profile
       )

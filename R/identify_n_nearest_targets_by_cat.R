@@ -19,8 +19,8 @@ identify_n_nearest_targets_by_cat <- function(odm_object, matrix_property,
                                               target_df, filter_attribute,
                                               filter_value, n) {
   mat <- odm_object[[matrix_property]] %>%
-    switch_names(.data, odm_object)
+    switch_names(odm_object)
   mat_subset <- filter_odm(mat, target_df, filter_attribute, filter_value)
   dst_mat <- get_n_min_values(mat_subset, n) %>%
-    average_n_min_values(.data, n)
+    average_n_min_values(n)
 }

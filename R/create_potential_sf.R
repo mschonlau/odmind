@@ -26,7 +26,6 @@ create_potential_sf <- function(odm_object, source_sf, target_df,
       accessibility_filter_value,
       search_direction, ors_profile
     )
-    format_pot_out_to_target_sf(source_sf, target_pot_df)
   }
   else {
     target_pot_df <- filter_by_distance_pot(
@@ -34,6 +33,11 @@ create_potential_sf <- function(odm_object, source_sf, target_df,
       accessibility_filter_value,
       search_direction, ors_profile
     )
+  }
+  if (search_direction == "to_target") {
+    format_pot_out_to_target_sf(source_sf, target_pot_df)
+  }
+  else {
     format_pot_out_from_target_sf(target_df, target_pot_df)
   }
 }

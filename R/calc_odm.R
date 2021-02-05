@@ -37,6 +37,7 @@ calc_odm <- function(profile_string, source_locations,
     min = i, max = length(chunks_src$start),
     style = 3
   )
+  j <- 1
   for (i in seq(1, length(chunks_src$start), 1)) {
     utils::setTxtProgressBar(pb, i)
     src_location_chunk <- src_locations[chunks_src$start[i]:chunks_src$end[i]]

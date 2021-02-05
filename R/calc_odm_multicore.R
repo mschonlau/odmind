@@ -10,14 +10,15 @@
 #' in separate x, y columns
 #' @param max_chunk_size integer value defining the maximum number of source
 #' to target connections to be processed per loop
+#' @param ors_url the url of the openrouteservice instance to be used for
+#' processing
 #'
 #' @return odm-object of type list encompassing duration and distance matrices
 #' and the source and target locations
 #' @export
-#' @importFrom openrouteservice "ors_matrix"
 #' @importFrom foreach %:% %dopar%
 calc_odm_multicore <- function(profile_string, source_locations,
-                               target_locations, max_chunk_size) {
+                               target_locations, max_chunk_size, ors_url) {
   start_time <- Sys.time()
   cat("\n", paste0("Start time: ", start_time), "\n")
   n_rows <- as.numeric(nrow(source_locations))
@@ -25,8 +26,8 @@ calc_odm_multicore <- function(profile_string, source_locations,
   distance_template <- bigstatsr::FBM(nrow = n_rows, ncol = n_cols)
   duration_template <- bigstatsr::FBM(nrow = n_rows, ncol = n_cols)
   mat <- list(
-    duration = duration_template,
     distance = distance_template,
+    duration = duration_template,
     sources = source_locations,
     targets = target_locations
   )
@@ -41,15 +42,16 @@ calc_odm_multicore <- function(profile_string, source_locations,
   }
   i <- 1
   j <- 1
+  opts <- list(progress = progress, ors_url = ors_url)
   tmp <- foreach::foreach(
     i = seq(1, length(chunks_src$start), 1),
-    .combine = cbind
+    .combine = cbind, .packages = "openrouteservice", .options.snow = opts
   ) %:%
     foreach::foreach(
       j = seq(1, length(chunks_dst$start), 1),
       .combine = c
     ) %dopar% {
-      progress(i)
+      options(openrouteservice.url = opts[["ors_url"]])
       src_location_chunk <- src_locations[chunks_src$start[i]:chunks_src$end[i]]
       src_chunk_size <- length(src_location_chunk)
       dst_location_chunk <- dst_locations[chunks_dst$start[j]:chunks_dst$end[j]]
@@ -62,16 +64,16 @@ calc_odm_multicore <- function(profile_string, source_locations,
       mat[["distance"]][
         chunks_src$start[i]:chunks_src$end[i],
         chunks_dst$start[j]:chunks_dst$end[j]
-      ] <- res$distances
+        ] <- res$distances
       mat[["duration"]][
         chunks_src$start[i]:chunks_src$end[i],
         chunks_dst$start[j]:chunks_dst$end[j]
-      ] <- res$durations / 60
+        ] <- res$durations / 60
       NULL
     }
   close(pb)
-  mat$duration <- mat$duration[]
   mat$distance <- mat$distance[]
+  mat$duration <- mat$duration[]
   cat("\n", "Done!", "\n")
   cat(paste0(" Duration: ", Sys.time() - start_time), "\n")
   return(mat)

@@ -18,7 +18,7 @@ to_target_by_cat_time_weighted <- function(out_mat, odm_object,
                                            filter_attribute, filter_value,
                                            ors_profile) {
   x <- switch_names(out_mat, odm_object) %>%
-    format_results_by_cat(.data, target_df, filter_attribute, filter_value) %>%
+    format_results_by_cat(target_df, filter_attribute, filter_value) %>%
     dplyr::filter(.data$value <= time_distance_value) %>%
-    weight_targets_by_time(.data, ors_profile)
+    weight_targets_by_time(ors_profile)
 }

@@ -8,8 +8,9 @@
 #' @noRd
 #'
 format_cum_out_to_target_sf <- function(sources_sf, target_cnt_df) {
-  out_sf <- sources_sf %>%
-    dplyr::left_join(.data, target_cnt_df, by = c("source_id" = "ID")) %>%
+  sources_sf %>%
+    dplyr::left_join(target_cnt_df, by = c("source_id" = "ID")) %>%
     dplyr::select(.data$source_id, .data$target_cnt) %>%
-    replace(is.na(.data), 0)
+    replace(is.na(.), 0)
 }
+utils::globalVariables(c("."))

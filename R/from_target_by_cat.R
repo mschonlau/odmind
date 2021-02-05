@@ -17,11 +17,11 @@
 from_target_by_cat <- function(out_mat, odm_object, time_distance_value,
                                target_df, filter_attribute, filter_value) {
   x <- switch_names(out_mat, odm_object) %>%
-    t(.data) %>%
-    format_results_by_cat(.data, target_df, filter_attribute, filter_value) %>%
+    t() %>%
+    format_results_by_cat(target_df, filter_attribute, filter_value) %>%
     dplyr::filter(.data$value <= time_distance_value) %>%
     dplyr::select(.data$target_id, .data$value) %>%
     dplyr::mutate(dplyr::across(where(is.character), as.numeric)) %>%
-    count_targets(.data)
+    count_targets()
 }
 utils::globalVariables(c("where"))

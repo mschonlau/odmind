@@ -14,10 +14,10 @@ filter_by_time_pot <- function(odm_object, time_value,
                                search_direction, ors_profile) {
   if (search_direction == "to_target") {
     x <- odm_object[["duration"]] %>%
-      to_target_time_weighted(.data, odm_object, time_value, ors_profile)
+      to_target_time_weighted(odm_object, time_value, ors_profile)
   }
   else {
     x <- odm_object[["duration"]] %>%
-      from_target_time_weighted(.data, odm_object, time_value, ors_profile)
+      from_target_time_weighted(odm_object, time_value, ors_profile)
   }
 }

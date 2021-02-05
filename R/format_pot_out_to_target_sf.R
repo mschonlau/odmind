@@ -10,7 +10,8 @@
 #'
 format_pot_out_to_target_sf <- function(source_sf, target_pot_df) {
   out_sf <- source_sf %>%
-    dplyr::left_join(.data, target_pot_df, by = c("source_id" = "ID")) %>%
+    dplyr::left_join(target_pot_df, by = c("source_id" = "ID")) %>%
     dplyr::select(.data$source_id, .data$target_pot) %>%
-    replace(is.na(.data), 0)
+    replace(is.na(.), 0)
 }
+utils::globalVariables(c("."))

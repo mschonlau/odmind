@@ -26,7 +26,6 @@ create_cumulative_sf <- function(odm_object, source_sf, target_df,
       accessibility_filter_value,
       search_direction
     )
-    format_cum_out_to_target_sf(source_sf, target_cnt_df)
   }
   else {
     target_cnt_df <- filter_by_distance_cum(
@@ -34,6 +33,11 @@ create_cumulative_sf <- function(odm_object, source_sf, target_df,
       accessibility_filter_value,
       search_direction
     )
+  }
+  if (search_direction == "to_target") {
+    format_cum_out_to_target_sf(source_sf, target_cnt_df)
+  }
+  else {
     format_cum_out_from_target_sf(target_df, target_cnt_df)
   }
 }

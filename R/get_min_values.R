@@ -13,9 +13,9 @@ get_min_values <- function(matrix_data) {
       matrix_data[i, j]
     )
   })) %>%
-    tibble::as_tibble(.data, .name_repair = "unique") %>%
-    dplyr::rename(.data, Min_ValueIDs = .data$...1, Min_Value = .data$...2) %>%
-    tidyr::separate(.data, .data$Min_ValueIDs, c("source_id_", "target_id_"),
+    tibble::as_tibble(.name_repair = "unique") %>%
+    dplyr::rename(Min_ValueIDs = .data$...1, Min_Value = .data$...2) %>%
+    tidyr::separate(.data$Min_ValueIDs, c("source_id_", "target_id_"),
       sep = "/"
     ) %>%
     dplyr::mutate(dplyr::across(where(is.character), as.numeric))

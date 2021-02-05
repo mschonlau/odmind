@@ -12,7 +12,7 @@
 to_target_time_weighted <- function(out_mat, odm_object,
                                     time_distance_value, ors_profile) {
   x <- switch_names(out_mat, odm_object) %>%
-    format_results(.data) %>%
+    format_results() %>%
     dplyr::filter(.data$value <= time_distance_value) %>%
-    weight_targets_by_time(.data, ors_profile)
+    weight_targets_by_time(ors_profile)
 }

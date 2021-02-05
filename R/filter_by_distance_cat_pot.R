@@ -22,7 +22,7 @@ filter_by_distance_cat_pot <- function(odm_object, distance_value,
   if (search_direction == "to_target") {
     x <- odm_object[["distance"]] %>%
       to_target_by_cat_distance_weighted(
-        .data, odm_object, distance_value,
+        odm_object, distance_value,
         target_df, filter_attribute,
         filter_value, ors_profile
       )
@@ -30,7 +30,7 @@ filter_by_distance_cat_pot <- function(odm_object, distance_value,
   else {
     x <- odm_object[["distance"]] %>%
       from_target_by_cat_distance_weighted(
-        .data, odm_object, distance_value,
+        odm_object, distance_value,
         target_df, filter_attribute,
         filter_value, ors_profile
       )

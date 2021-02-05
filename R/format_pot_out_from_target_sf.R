@@ -11,6 +11,6 @@
 format_pot_out_from_target_sf <- function(target_df, target_pot_df) {
   in_sf <- sf::st_as_sf(target_df, coords = c("x", "y"))
   out_sf <- in_sf %>%
-    dplyr::left_join(.data, target_pot_df, by = c("target_id" = "target_id")) %>%
+    dplyr::left_join(target_pot_df, by = c("target_id" = "target_id")) %>%
     dplyr::select(.data$target_id, source_pot = .data$target_pot)
 }

@@ -8,7 +8,8 @@ calc_odm_multicore(
   profile_string,
   source_locations,
   target_locations,
-  max_chunk_size
+  max_chunk_size,
+  ors_url
 )
 }
 \arguments{
@@ -22,6 +23,9 @@ in separate x, y columns}
 
 \item{max_chunk_size}{integer value defining the maximum number of source
 to target connections to be processed per loop}
+
+\item{ors_url}{the url of the openrouteservice instance to be used for
+processing}
 }
 \value{
 odm-object of type list encompassing duration and distance matrices

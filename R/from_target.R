@@ -11,11 +11,11 @@
 #'
 from_target <- function(out_mat, odm_object, time_distance_value) {
   x <- switch_names(out_mat, odm_object) %>%
-    t(.data) %>%
-    format_results(.data) %>%
+    t() %>%
+    format_results() %>%
     dplyr::filter(.data$value <= time_distance_value) %>%
     dplyr::select(.data$target_id, .data$value) %>%
     dplyr::mutate(dplyr::across(where(is.character), as.numeric)) %>%
-    count_targets(.data)
+    count_targets()
 }
 utils::globalVariables(c("where"))
