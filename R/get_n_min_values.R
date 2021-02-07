@@ -21,7 +21,7 @@ get_n_min_values <- function(matrix_data, n_vals) {
       matrix_data[i, j]
     )
   })) %>%
-    tibble::as_tibble() %>%
+    tibble::as_tibble(.name_repair = "unique") %>%
     splitstackshape::cSplit(names(.)[1:n_vals], "/") %>%
     dplyr::rename_at(
       dplyr::vars(

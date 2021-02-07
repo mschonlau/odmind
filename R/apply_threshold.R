@@ -8,12 +8,9 @@
 #' @noRd
 #'
 apply_threshold <- function(pnt_sf, threshold_col, value) {
-  out_pnts <- pnt_sf %>%
-    dplyr::mutate(
-      within_threshold =
-        dplyr::case_when(
-          {{ threshold_col }} <= value ~ 1L,
-          TRUE ~ 0L
-        )
+  pnt_sf %>%
+    dplyr::mutate(within_threshold = dplyr::case_when(
+      !! rlang::sym(threshold_col) <= as.numeric(value) ~ 1,
+      TRUE ~ 0)
     )
 }

@@ -8,7 +8,7 @@
 #' @return sf of geometry type polygon including aggregated target counts
 #' @export
 #'
-aggregate_accumulation <- function(aoi_sf, pnt_sf, id_col, crs) {
+aggregate_accumulation <- function(aoi_sf, pnt_sf, id_col, crs = 4647) {
   data_list <- read_inputs(aoi_sf, pnt_sf, id_col, crs)
   aoi <- data_list[[1]]
   pnt <- data_list[[2]]

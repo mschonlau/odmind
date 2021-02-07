@@ -9,14 +9,13 @@
 #'
 calc_aoi_expenses <- function(aoi_sf, pnt_sf) {
   aggregated_values <- aoi_sf %>%
-    sf::st_join(.data, pnt_sf, join = sf::st_intersects) %>%
-    sf::st_set_geometry(.data, NULL) %>%
+    sf::st_join(pnt_sf, join = sf::st_intersects) %>%
+    sf::st_drop_geometry() %>%
     dplyr::group_by(dplyr::across(1)) %>%
     dplyr::summarise(
       MedianDist = stats::median(.data$Min_Dist, na.rm = TRUE),
       MedianTime = stats::median(.data$Min_Time, na.rm = TRUE)
     )
-  out_sf <- aoi_sf %>%
-    dplyr::left_join(.data, aggregated_values) %>%
-    replace(.data, is.na(.data), -1)
+  aoi_sf %>%
+    dplyr::left_join(aggregated_values)
 }

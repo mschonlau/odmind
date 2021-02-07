@@ -9,7 +9,7 @@
 #' values
 #' @export
 #'
-aggregate_expenses <- function(aoi_sf, pnt_sf, id_col, crs) {
+aggregate_expenses <- function(aoi_sf, pnt_sf, id_col, crs=4647) {
   data_list <- read_inputs(aoi_sf, pnt_sf, id_col, crs)
   aoi <- data_list[[1]]
   pnt <- data_list[[2]]

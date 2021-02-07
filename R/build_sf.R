@@ -25,5 +25,6 @@ build_sf <- function(source_sf, nearest_target_dist,
     dplyr::left_join(target_df,
       by = c("target_id_" = "target_id")
     ) %>%
-    dplyr::rename(target_id = .data$target_id_)
+    dplyr::rename(target_id = .data$target_id_) %>%
+    sf::st_set_crs(4326)
 }

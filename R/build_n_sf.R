@@ -48,5 +48,6 @@ build_n_sf <- function(source_sf, nearest_target_dist,
     names(df) <- paste(names(df), i, sep = "_")
     df
   })
-  purrr::reduce(df_list, dplyr::left_join, .init = res_sf)
+  purrr::reduce(df_list, dplyr::left_join, .init = res_sf) %>%
+    sf::st_set_crs(4326)
 }

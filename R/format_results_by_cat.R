@@ -19,5 +19,7 @@ format_results_by_cat <- function(matrix_object, target_df,
     tibble::as_tibble(rownames = NA) %>%
     tibble::rownames_to_column("ID") %>%
     dplyr::mutate(ID = as.numeric(.data$ID)) %>%
-    tidyr::pivot_longer(-.data$ID, names_to = "target_id", values_to = "value")
+    tidyr::pivot_longer(-.data$ID,
+                        names_to = "target_id",
+                        values_to = "value")
 }
