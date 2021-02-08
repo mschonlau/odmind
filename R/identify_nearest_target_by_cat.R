@@ -15,8 +15,9 @@
 identify_nearest_target_by_cat <- function(odm_object, matrix_property,
                                            target_df, filter_attribute,
                                            filter_value) {
+  search_direction <- "to_target"
   mat <- odm_object[[matrix_property]] %>%
-    switch_names(odm_object)
+    switch_names(odm_object, search_direction)
   mat_subset <- filter_odm(mat, target_df, filter_attribute, filter_value)
   get_min_values(mat_subset)
 }

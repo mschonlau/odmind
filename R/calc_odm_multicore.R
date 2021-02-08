@@ -6,7 +6,7 @@
 #' @param profile_string Route profile
 #' @param source_locations sf object of geometry type point containing the
 #' sources with coordinates in separate x, y columns
-#' @param target_locations data.frame containing the sources with coordinates
+#' @param target_locations data.frame containing the targets with coordinates
 #' in separate x, y columns
 #' @param max_chunk_size integer value defining the maximum number of source
 #' to target connections to be processed per loop

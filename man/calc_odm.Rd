@@ -12,7 +12,7 @@ calc_odm(profile_string, source_locations, target_locations, max_chunk_size)
 \item{source_locations}{sf object of geometry type point containing the
 sources with coordinates in separate x, y columns}
 
-\item{target_locations}{data.frame containing the sources with coordinates
+\item{target_locations}{data.frame containing the targets with coordinates
 in separate x, y columns}
 
 \item{max_chunk_size}{integer value defining the maximum number of source

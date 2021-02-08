@@ -11,6 +11,13 @@
 #' in separate x, y columns
 #'
 #' @return sf object of geometry type point
+#' @examples
+#' data(testdata)
+#' od_result <- testdata$od_result
+#' output_sf <- create_time_distance_sf(
+#'   odm_object = od_result,
+#'   source_sf = od_result$sources, od_result$targets
+#' )
 #' @export
 #' @importFrom dplyr "%>%"
 

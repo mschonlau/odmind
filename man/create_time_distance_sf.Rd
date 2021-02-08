@@ -23,3 +23,11 @@ sf object of geometry type point
 Create sf object of geometry type point with minimum distance
 and duration values for each source to target combination
 }
+\examples{
+data(testdata)
+od_result <- testdata$od_result
+output_sf <- create_time_distance_sf(
+  odm_object = od_result,
+  source_sf = od_result$sources, od_result$targets
+)
+}
