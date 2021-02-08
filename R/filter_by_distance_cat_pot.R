@@ -24,7 +24,7 @@ filter_by_distance_cat_pot <- function(odm_object, distance_value,
       to_target_by_cat_distance_weighted(
         odm_object, distance_value,
         target_df, filter_attribute,
-        filter_value, ors_profile
+        filter_value, search_direction, ors_profile
       )
   }
   else {
@@ -32,7 +32,7 @@ filter_by_distance_cat_pot <- function(odm_object, distance_value,
       from_target_by_cat_distance_weighted(
         odm_object, distance_value,
         target_df, filter_attribute,
-        filter_value, ors_profile
+        filter_value, search_direction, ors_profile
       )
   }
 }

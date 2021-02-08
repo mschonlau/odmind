@@ -4,7 +4,7 @@
 \alias{aggregate_potential}
 \title{aggregate_potential}
 \usage{
-aggregate_potential(aoi_sf, pnt_sf, id_col, crs)
+aggregate_potential(aoi_sf, pnt_sf, id_col, crs = 4647)
 }
 \arguments{
 \item{aoi_sf}{sf of geometry type polygon used for aggregation}

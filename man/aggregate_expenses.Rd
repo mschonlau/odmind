@@ -4,7 +4,7 @@
 \alias{aggregate_expenses}
 \title{aggregate_expenses}
 \usage{
-aggregate_expenses(aoi_sf, pnt_sf, id_col, crs)
+aggregate_expenses(aoi_sf, pnt_sf, id_col, crs = 4647)
 }
 \arguments{
 \item{aoi_sf}{sf of geometry type polygon used for aggregation}

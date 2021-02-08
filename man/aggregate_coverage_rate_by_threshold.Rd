@@ -8,9 +8,9 @@ aggregate_coverage_rate_by_threshold(
   aoi_sf,
   pnt_sf,
   id_col,
-  crs,
   threshold_col,
-  threshold_value
+  threshold_value,
+  crs = 4647
 )
 }
 \arguments{
@@ -20,11 +20,11 @@ aggregate_coverage_rate_by_threshold(
 
 \item{id_col}{name of the id column used for grouping operations}
 
-\item{crs}{epsg code}
-
 \item{threshold_col}{Name of the threshold value column}
 
 \item{threshold_value}{A numeric threshold value, minutes or meters}
+
+\item{crs}{epsg code}
 }
 \value{
 sf of geometry type polygon including an aggregated coverage rate

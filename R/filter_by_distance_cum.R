@@ -17,6 +17,6 @@ filter_by_distance_cum <- function(odm_object, distance_value,
   }
   else {
     x <- odm_object[["distance"]] %>%
-      from_target(odm_object, distance_value)
+      from_target(odm_object, distance_value, search_direction)
   }
 }

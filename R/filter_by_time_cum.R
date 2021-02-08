@@ -12,10 +12,10 @@
 filter_by_time_cum <- function(odm_object, time_value, search_direction) {
   if (search_direction == "to_target") {
     x <- odm_object[["duration"]] %>%
-      to_target(odm_object, time_value)
+      to_target(odm_object, time_value, search_direction)
   }
   else {
     x <- odm_object[["duration"]] %>%
-      from_target(odm_object, time_value)
+      from_target(odm_object, time_value, search_direction)
   }
 }

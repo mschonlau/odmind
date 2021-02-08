@@ -4,7 +4,7 @@
 \alias{aggregate_accumulation}
 \title{aggregate_accumulation}
 \usage{
-aggregate_accumulation(aoi_sf, pnt_sf, id_col, crs)
+aggregate_accumulation(aoi_sf, pnt_sf, id_col, crs = 4647)
 }
 \arguments{
 \item{aoi_sf}{sf of geometry type polygon used for aggregation}
