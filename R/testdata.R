@@ -21,6 +21,6 @@
 #'
 #' @examples
 #' data(testdata)
-#' plot(grid_500m, reset = F)
-#' plot(sf::st_transform(od_result$sources, 3035)$geom, add= T)
+#' plot(testdata$grid_500m, reset = FALSE)
+#' plot(sf::st_transform(testdata$od_result$sources, 3035)$geom, add = TRUE)
 "testdata"
