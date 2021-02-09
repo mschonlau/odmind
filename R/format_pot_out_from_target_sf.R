@@ -13,5 +13,6 @@ format_pot_out_from_target_sf <- function(target_df, target_pot_df) {
   out_sf <- in_sf %>%
     dplyr::left_join(target_pot_df, by = c("target_id" = "ID")) %>%
     dplyr::select(.data$target_id, source_pot = .data$target_pot) %>%
+    replace(is.na(.), 0) %>%
     sf::st_set_crs(4326)
 }

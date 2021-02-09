@@ -13,11 +13,11 @@
 #' @examples
 #' data(testdata)
 #' od_result <- testdata$od_result
-#' Use e.g. n = 3
+#' # Use e.g. n = 3
 #' output_sf <- create_time_distance_n_sf(odm_object = od_result, n = 3)
 #' @seealso \code{calc_odm()} or \code{calc_odm_multicore()} for odm_object
-#'     creation and \code{create_time_distance_sf} to calculate only the nearest
-#'     target location
+#'     creation and \code{create_time_distance_sf()} to calculate only the
+#'     nearest target location
 #' @export
 #'
 create_time_distance_n_sf <- function(odm_object, n) {

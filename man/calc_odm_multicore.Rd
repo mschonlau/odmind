@@ -24,8 +24,7 @@ in separate x, y columns}
 \item{max_chunk_size}{integer value defining the maximum number of source
 to target connections to be processed per loop}
 
-\item{ors_url}{the url of the openrouteservice instance to be used for
-processing}
+\item{ors_url}{url of the openrouteservice server to be used for processing}
 }
 \value{
 odm-object of type list encompassing duration and distance matrices
@@ -34,4 +33,24 @@ and the source and target locations
 \description{
 Looped calculation of duration and distance matrices between all
 sources and targets (multicore)
+}
+\examples{
+\dontrun{
+data(testdata)
+sources <- testdata$od_result$sources
+targets <- testdata$od_result$targets
+# The testdata dataset is too small to generate time benefits out of using
+# parallel processing. It should be applied to larger datasets
+max_chunk_size <-  200 # depends on the config of the OpenRouteService server
+ors_url = "SERVER URL"
+cl <- makeCluster(detectCores()-1)
+registerDoSNOW(cl)
+res <- calc_odm_multicore(profile_string = "foot-walking",
+                          source_locations = sources,
+                          target_locations = targets,
+                          max_chunk_size = max_chunk_size,
+                          ors_url = ors_url)}
+}
+\seealso{
+\code{calc_odm()} for sequential odm_object creation with one core
 }

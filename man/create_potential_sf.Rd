@@ -6,8 +6,6 @@
 \usage{
 create_potential_sf(
   odm_object,
-  source_sf,
-  target_df,
   filter_value_type,
   accessibility_filter_value,
   search_direction,
@@ -15,14 +13,9 @@ create_potential_sf(
 )
 }
 \arguments{
-\item{odm_object}{of type list encompassing duration and distance
-matrices and the source and target locations}
-
-\item{source_sf}{sf object of geometry type point containing the sources
-with coordinates in separate x, y columns}
-
-\item{target_df}{data.frame containing the targets with coordinates
-in separate x, y columns}
+\item{odm_object}{of type list encompassing a duration and a distance
+matrix, the source and target locations. Created by using either
+\code{calc_odm} or \code{calc_odm_multicore}}
 
 \item{filter_value_type}{A string, "time" or "distance"}
 
@@ -30,12 +23,28 @@ in separate x, y columns}
 
 \item{search_direction}{A string, "to_targets" or "from_targets"}
 
-\item{ors_profile}{Route profile}
+\item{ors_profile}{Route profile, e.g. \code{"foot-walking"} or
+\code{"driving-car"}}
 }
 \value{
 sf object of geometry type point
 }
 \description{
-Creates sf object of geometry type point with a weighted value
-of sources for each target id for all features matching the applied filters
+Creates sf of geometry type point with a weighted value
+    of features that match the applied time or distance filter
+}
+\examples{
+data(testdata)
+od_result <- testdata$od_result
+output_sf <- create_potential_sf(odm_object = od_result,
+                                  filter_value_type = "distance",
+                                  accessibility_filter_value = 750,
+                                  search_direction = "to_target",
+                                  ors_profile = "foot-walking")
+}
+\seealso{
+\code{calc_odm()} or \code{calc_odm_multicore()} for odm_object
+    creation and \code{create_potential_by_cat_sf()} to create a weighted
+    value for features of a specific category up to a threshold distance or
+    time value
 }

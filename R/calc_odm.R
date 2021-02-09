@@ -13,6 +13,19 @@
 #'
 #' @return odm-object of type list encompassing duration and distance matrices
 #' and the source and target locations
+#' @examples
+#' \dontrun{
+#' data(testdata)
+#' options(openrouteservice.url = "SERVER URL")
+#' sources <- testdata$od_result$sources
+#' targets <- testdata$od_result$targets
+#' max_chunk_size <-  200 # depends on the config of the OpenRouteService server
+#' res <- calc_odm(profile_string = "foot-walking",
+#'                 source_locations = sources,
+#'                 target_locations = targets,
+#'                 max_chunk_size = max_chunk_size)}
+#' @seealso \code{calc_odm_multicore()} for odm_object creation using multiple
+#'     cores
 #' @export
 #'
 calc_odm <- function(profile_string, source_locations,
@@ -23,8 +36,8 @@ calc_odm <- function(profile_string, source_locations,
   n_cols <- as.numeric(nrow(target_locations))
   matrix_template <- matrix(NA, nrow = n_rows, ncol = n_cols)
   mat <- list(
-    duration = matrix_template,
     distance = matrix_template,
+    duration = matrix_template,
     sources = source_locations,
     targets = target_locations
   )
@@ -50,14 +63,14 @@ calc_odm <- function(profile_string, source_locations,
         coordinates, profile_string,
         src_chunk_size, dst_chunk_size
       )
-      mat[["duration"]][
-        chunks_src$start[i]:chunks_src$end[i],
-        chunks_dst$start[j]:chunks_dst$end[j]
-      ] <- res$durations / 60
       mat[["distance"]][
         chunks_src$start[i]:chunks_src$end[i],
         chunks_dst$start[j]:chunks_dst$end[j]
       ] <- res$distances
+      mat[["duration"]][
+        chunks_src$start[i]:chunks_src$end[i],
+        chunks_dst$start[j]:chunks_dst$end[j]
+      ] <- res$durations / 60
     }
     if (i == length(chunks_src$start)) {
       cat("\n", "Done!", "\n")

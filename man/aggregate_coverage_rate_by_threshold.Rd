@@ -20,7 +20,8 @@ aggregate_coverage_rate_by_threshold(
 
 \item{id_col}{name of the id column used for grouping operations}
 
-\item{threshold_col}{Name of the threshold value column}
+\item{threshold_col}{Name of the threshold value column, \code{"Min_Dist"}
+or \code{"Min_Time"}}
 
 \item{threshold_value}{A numeric threshold value, minutes or meters}
 
@@ -31,5 +32,21 @@ sf of geometry type polygon including an aggregated coverage rate
 target potentials
 }
 \description{
-aggregate_coverage_rate_by_threshold
+Calculate an average coverage rate within an area of interest
+    by applying a threshold filter to one of the sf (geometry type point)
+    attributes \code{"Min_Dist"} or \code{"Min_Time"}
+}
+\examples{
+data(testdata)
+pnt_sf <- create_time_distance_sf(odm_object = testdata$od_result)
+output_sf <- aggregate_coverage_rate_by_threshold(
+    aoi_sf = testdata$grid_500m,
+    pnt_sf = pnt_sf,
+    id_col = "id",
+    threshold_col = "Min_Dist",
+    threshold_value = 350,
+    crs = 4647)
+}
+\seealso{
+\code{create_time_distance_sf()} to create a suitable sf
 }

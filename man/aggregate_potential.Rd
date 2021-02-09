@@ -20,5 +20,21 @@ sf of geometry type polygon including aggregated weighted
 target potentials
 }
 \description{
-aggregate_potential
+Aggregate the sf (geometry type point) attributes
+    \code{"MeanPot"} and \code{"MedianPot"} to an area of interest
+}
+\examples{
+data(testdata)
+pnt_sf <- create_potential_sf(odm_object = testdata$od_result,
+                              filter_value_type = "distance",
+                              accessibility_filter_value = 750,
+                              search_direction = "to_target",
+                              ors_profile = "foot-walking")
+output_sf <- aggregate_potential(aoi_sf = testdata$grid_500m,
+                                 pnt_sf = pnt_sf,
+                                 id_col = "id",
+                                 crs = 4647)
+}
+\seealso{
+\code{create_potential_sf()} to create a suitable sf
 }

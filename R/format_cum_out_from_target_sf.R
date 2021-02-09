@@ -13,5 +13,6 @@ format_cum_out_from_target_sf <- function(target_df, target_cnt_df) {
   out_sf <- in_sf %>%
     dplyr::left_join(target_cnt_df, by = c("target_id" = "ID")) %>%
     dplyr::select(.data$target_id, source_cnt = .data$target_cnt) %>%
+    replace(is.na(.), 0) %>%
     sf::st_set_crs(4326)
 }
