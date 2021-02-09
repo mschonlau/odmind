@@ -1,7 +1,6 @@
 Type: Package
 Package: odmind
-Title: Calculate Origin-Destination Matrix Accessibility
-    Indicators
+Title: Calculate Origin-Destination Matrix Indicators
 Version: 0.0.1
 Authors@R: 
     person(given = "Marcel",
@@ -17,6 +16,7 @@ Description: Provides functions to create origin-destination
 License: MIT + file LICENSE
 URL: https://github.com/mschonlau/odmind
 BugReports: https://github.com/mschonlau/odmind/issues
+Depends: R (>= 3.5.0)
 Imports: 
     bigstatsr,
     doSNOW,
