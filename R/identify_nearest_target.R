@@ -9,7 +9,7 @@
 #' @importFrom rlang .data
 
 identify_nearest_target <- function(odm_object, matrix_property) {
-  search_direction = "to_target"
+  search_direction <- "to_target"
   mat <- odm_object[[matrix_property]] %>%
     switch_names(odm_object, search_direction)
   get_min_values(mat)

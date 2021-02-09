@@ -13,10 +13,12 @@
 #' @examples
 #' data(testdata)
 #' pnt_sf <- create_time_distance_sf(odm_object = testdata$od_result)
-#' output_sf <- aggregate_expenses(aoi_sf = testdata$grid_500m,
-#'                                 pnt_sf = pnt_sf,
-#'                                 id_col = "id",
-#'                                 crs = 4647)
+#' output_sf <- aggregate_expenses(
+#'   aoi_sf = testdata$grid_500m,
+#'   pnt_sf = pnt_sf,
+#'   id_col = "id",
+#'   crs = 4647
+#' )
 #' @seealso \code{create_time_distance_sf()} to create a suitable sf
 #' @export
 #'

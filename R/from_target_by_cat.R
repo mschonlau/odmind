@@ -20,8 +20,10 @@ from_target_by_cat <- function(out_mat, odm_object, time_distance_value,
                                search_direction) {
   x <- t(out_mat) %>%
     switch_names(odm_object, search_direction) %>%
-    format_results_by_cat(target_df, filter_attribute, filter_value,
-                          search_direction) %>%
+    format_results_by_cat(
+      target_df, filter_attribute, filter_value,
+      search_direction
+    ) %>%
     dplyr::filter(.data$value <= time_distance_value) %>%
     dplyr::select(.data$ID, .data$value) %>%
     dplyr::mutate(dplyr::across(where(is.character), as.numeric)) %>%

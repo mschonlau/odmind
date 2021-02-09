@@ -11,14 +11,18 @@
 #' @return sf of geometry type polygon including aggregated target counts
 #' @examples
 #' data(testdata)
-#' pnt_sf <- create_cumulative_sf(odm_object = testdata$od_result,
-#'                                filter_value_type = "distance",
-#'                                accessibility_filter_value = 750,
-#'                                search_direction = "to_target")
-#' output_sf <- aggregate_accumulation(aoi_sf = testdata$grid_500m,
-#'                                     pnt_sf = pnt_sf,
-#'                                     id_col = "id",
-#'                                     crs = 4647)
+#' pnt_sf <- create_cumulative_sf(
+#'   odm_object = testdata$od_result,
+#'   filter_value_type = "distance",
+#'   accessibility_filter_value = 750,
+#'   search_direction = "to_target"
+#' )
+#' output_sf <- aggregate_accumulation(
+#'   aoi_sf = testdata$grid_500m,
+#'   pnt_sf = pnt_sf,
+#'   id_col = "id",
+#'   crs = 4647
+#' )
 #' @seealso \code{create_cumulative_sf()} to create a suitable sf
 #' @export
 #'

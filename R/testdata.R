@@ -24,9 +24,10 @@
 #' library(sf)
 #' data(testdata)
 #' targets_sf <- sf::st_as_sf(testdata$od_result$targets,
-#'     coords = c("x", "y")) %>%
-#'     sf::st_set_crs(4326) %>%
-#'     sf::st_transform(3035)
+#'   coords = c("x", "y")
+#' ) %>%
+#'   sf::st_set_crs(4326) %>%
+#'   sf::st_transform(3035)
 #' plot(testdata$grid_500m$geometry, reset = FALSE)
 #' plot(sf::st_transform(testdata$od_result$sources, 3035)$geom, add = TRUE)
 #' plot(targets_sf, col = "red", pch = 20, add = TRUE)

@@ -16,5 +16,5 @@ read_inputs <- function(aoi_sf, pnt_sf, id_col, crs) {
     dplyr::select(id_col)
   pnt <- pnt_sf %>%
     sf::st_transform(crs)
-list(aoi, pnt)
+  list(aoi, pnt)
 }

@@ -21,6 +21,6 @@ filter_odm <- function(matrix_data, target_df, filter_attribute, filter_value,
     subset(matrix_data, select = ids)
   }
   else {
-    matrix_data[ids,]
+    matrix_data[ids, ]
   }
 }

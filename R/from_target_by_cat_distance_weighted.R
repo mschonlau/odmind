@@ -23,8 +23,10 @@ from_target_by_cat_distance_weighted <- function(out_mat, odm_object,
                                                  ors_profile) {
   x <- t(out_mat) %>%
     switch_names(odm_object, search_direction) %>%
-    format_results_by_cat(target_df, filter_attribute, filter_value,
-                          search_direction) %>%
+    format_results_by_cat(
+      target_df, filter_attribute, filter_value,
+      search_direction
+    ) %>%
     dplyr::filter(.data$value <= time_distance_value) %>%
     dplyr::select(.data$ID, .data$value) %>%
     dplyr::mutate(dplyr::across(where(is.character), as.numeric)) %>%

@@ -16,11 +16,13 @@
 #' @examples
 #' data(testdata)
 #' od_result <- testdata$od_result
-#' output_sf <- create_potential_sf(odm_object = od_result,
-#'                                   filter_value_type = "distance",
-#'                                   accessibility_filter_value = 750,
-#'                                   search_direction = "to_target",
-#'                                   ors_profile = "foot-walking")
+#' output_sf <- create_potential_sf(
+#'   odm_object = od_result,
+#'   filter_value_type = "distance",
+#'   accessibility_filter_value = 750,
+#'   search_direction = "to_target",
+#'   ors_profile = "foot-walking"
+#' )
 #' @seealso \code{calc_odm()} or \code{calc_odm_multicore()} for odm_object
 #'     creation and \code{create_potential_by_cat_sf()} to create a weighted
 #'     value for features of a specific category up to a threshold distance or

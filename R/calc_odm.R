@@ -19,11 +19,14 @@
 #' options(openrouteservice.url = "SERVER URL")
 #' sources <- testdata$od_result$sources
 #' targets <- testdata$od_result$targets
-#' max_chunk_size <-  200 # depends on the config of the OpenRouteService server
-#' res <- calc_odm(profile_string = "foot-walking",
-#'                 source_locations = sources,
-#'                 target_locations = targets,
-#'                 max_chunk_size = max_chunk_size)}
+#' max_chunk_size <- 200 # depends on the config of the OpenRouteService server
+#' res <- calc_odm(
+#'   profile_string = "foot-walking",
+#'   source_locations = sources,
+#'   target_locations = targets,
+#'   max_chunk_size = max_chunk_size
+#' )
+#' }
 #' @seealso \code{calc_odm_multicore()} for odm_object creation using multiple
 #'     cores
 #' @export

@@ -14,10 +14,12 @@
 #' @examples
 #' data(testdata)
 #' od_result <- testdata$od_result
-#' output_sf <- create_cumulative_sf(odm_object = od_result,
-#'                                   filter_value_type = "distance",
-#'                                   accessibility_filter_value = 750,
-#'                                   search_direction = "to_target")
+#' output_sf <- create_cumulative_sf(
+#'   odm_object = od_result,
+#'   filter_value_type = "distance",
+#'   accessibility_filter_value = 750,
+#'   search_direction = "to_target"
+#' )
 #' @seealso \code{calc_odm()} or \code{calc_odm_multicore()} for odm_object
 #'     creation and \code{create_cumulative_by_cat_sf} to count features of a
 #'     specific category up to a threshold distance or time

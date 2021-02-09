@@ -30,7 +30,7 @@ filter_by_time_cat_pot <- function(odm_object, time_value, search_direction,
       from_target_by_cat_time_weighted(
         odm_object, time_value, target_df,
         filter_attribute, filter_value,
-        search_direction,ors_profile
+        search_direction, ors_profile
       )
   }
 }

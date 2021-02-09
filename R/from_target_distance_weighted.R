@@ -13,7 +13,7 @@
 from_target_distance_weighted <- function(out_mat, odm_object,
                                           time_distance_value, search_direction,
                                           ors_profile) {
-  x <-  t(out_mat) %>%
+  x <- t(out_mat) %>%
     switch_names(odm_object, search_direction) %>%
     format_results() %>%
     dplyr::filter(.data$value <= time_distance_value) %>%

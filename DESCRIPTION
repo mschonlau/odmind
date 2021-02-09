@@ -9,20 +9,19 @@ Authors@R:
            email = "marcel.schonlau@hs-bochum.de")
 Maintainer: Marcel Schonlau <marcel.schonlau@hs-bochum.de>
 Description: Provides functions to create origin-destination
-    matrices utilizing the OpenRouteService. Based on those matrices
+    matrices utilizing the OpenRouteService API. Based on those matrices
     several functions for calculating accessibility indicators for point
     data as well as aggregation methods to polygon areas of interest are
     available.
 License: MIT + file LICENSE
 URL: https://github.com/mschonlau/odmind
 BugReports: https://github.com/mschonlau/odmind/issues
-Depends: R (>= 3.5.0)
+Depends: 
+    R (>= 3.5.0)
 Imports: 
     bigstatsr,
-    doSNOW,
     dplyr,
     foreach,
-    parallel,
     openrouteservice (>= 0.4.0),
     purrr,
     rlang,
@@ -31,7 +30,9 @@ Imports:
     tibble,
     tidyr
 Suggests: 
+    doSNOW,
     knitr,
+    parallel,
     rmarkdown,
     testthat (>= 3.0.0)
 VignetteBuilder: 

@@ -13,12 +13,14 @@
 #' @examples
 #' \dontrun{
 #' data(testdata)
-#' merged_sf <- merge_indicators(aoi_sf = testdata$grid_500m,
-#'                               id_col = "id",
-#'                               aggregated_sf_1,
-#'                               aggregated_sf_2,
-#'                               aggregated_sf_3,
-#'                               ...)
+#' merged_sf <- merge_indicators(
+#'   aoi_sf = testdata$grid_500m,
+#'   id_col = "id",
+#'   aggregated_sf_1,
+#'   aggregated_sf_2,
+#'   aggregated_sf_3,
+#'   ...
+#' )
 #' }
 #' @export
 #'

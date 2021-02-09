@@ -20,17 +20,18 @@
 #' data(testdata)
 #' pnt_sf <- create_time_distance_sf(odm_object = testdata$od_result)
 #' output_sf <- aggregate_coverage_rate_by_threshold(
-#'     aoi_sf = testdata$grid_500m,
-#'     pnt_sf = pnt_sf,
-#'     id_col = "id",
-#'     threshold_col = "Min_Dist",
-#'     threshold_value = 350,
-#'     crs = 4647)
+#'   aoi_sf = testdata$grid_500m,
+#'   pnt_sf = pnt_sf,
+#'   id_col = "id",
+#'   threshold_col = "Min_Dist",
+#'   threshold_value = 350,
+#'   crs = 4647
+#' )
 #' @seealso \code{create_time_distance_sf()} to create a suitable sf
 #' @export
 #'
 aggregate_coverage_rate_by_threshold <- function(aoi_sf, pnt_sf, id_col,
-                                                 threshold_col,threshold_value,
+                                                 threshold_col, threshold_value,
                                                  crs = 4647) {
   data_list <- read_inputs(aoi_sf, pnt_sf, id_col, crs)
   aoi <- data_list[[1]]

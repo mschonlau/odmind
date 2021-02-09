@@ -16,8 +16,10 @@
 #' @examples
 #' data(testdata)
 #' od_result <- testdata$od_result
-#' output_sf <- create_time_distance_n_by_cat_sf(odm_object = od_result,
-#'     filter_attribute = "category", filter_value = "A", n = 3)
+#' output_sf <- create_time_distance_n_by_cat_sf(
+#'   odm_object = od_result,
+#'   filter_attribute = "category", filter_value = "A", n = 3
+#' )
 #' @seealso \code{calc_odm()} or \code{calc_odm_multicore()} for odm_object
 #'     creation and \code{create_time_distance_by_cat_sf} to calculate only
 #'     the nearest target location for a specific category
@@ -37,5 +39,5 @@ create_time_distance_n_by_cat_sf <- function(odm_object, filter_attribute,
       odm_object, "duration", target_df,
       filter_attribute, filter_value, n
     )
-  build_n_sf(source_sf, nearest_target_dist, nearest_target_time,target_df, n)
+  build_n_sf(source_sf, nearest_target_dist, nearest_target_time, target_df, n)
 }

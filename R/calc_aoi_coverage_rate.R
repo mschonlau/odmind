@@ -25,4 +25,3 @@ calc_aoi_coverage_rate <- function(aoi_sf, pnt_sf, id_col) {
     replace(is.na(.), 0)
 }
 utils::globalVariables(c("."))
-
