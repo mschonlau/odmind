@@ -4,23 +4,12 @@
 \alias{create_time_distance_by_cat_sf}
 \title{create_time_distance_by_cat_sf}
 \usage{
-create_time_distance_by_cat_sf(
-  odm_object,
-  source_sf,
-  target_df,
-  filter_attribute,
-  filter_value
-)
+create_time_distance_by_cat_sf(odm_object, filter_attribute, filter_value)
 }
 \arguments{
-\item{odm_object}{of type list encompassing duration and distance
-matrices and the source and target locations}
-
-\item{source_sf}{sf object of geometry type point containing the sources
-with coordinates in separate x, y columns}
-
-\item{target_df}{data.frame containing the targets with coordinates
-in separate x, y columns}
+\item{odm_object}{of type list encompassing a duration and a distance
+matrix, the source and target locations. Created by using either
+\code{calc_odm} or \code{calc_odm_multicore}}
 
 \item{filter_attribute}{A category column to subset the targets}
 
@@ -30,7 +19,18 @@ in separate x, y columns}
 sf object of geometry type point
 }
 \description{
-Create sf object of geometry type point with minimum distance
-and duration values for each source to target combination that matches the
-applied category filter
+Creates sf of geometry type point for each source feature with
+    the minimum distance and duration values to the nearest target feature
+    which matches the applied category filter
+}
+\examples{
+data(testdata)
+od_result <- testdata$od_result
+output_sf <- create_time_distance_by_cat_sf(odm_object = od_result,
+    filter_attribute = "category", filter_value = "A")
+}
+\seealso{
+\code{calc_odm()} or \code{calc_odm_multicore()} for odm_object
+    creation and \code{create_time_distance_n_by_ca_sf} to calculate the n
+    nearest target locations for a specific category
 }

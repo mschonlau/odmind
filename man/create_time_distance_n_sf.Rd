@@ -4,17 +4,12 @@
 \alias{create_time_distance_n_sf}
 \title{create_time_distance_n_sf}
 \usage{
-create_time_distance_n_sf(odm_object, source_sf, target_df, n)
+create_time_distance_n_sf(odm_object, n)
 }
 \arguments{
-\item{odm_object}{of type list encompassing duration and distance
-matrices and the source and target locations}
-
-\item{source_sf}{sf object of geometry type point containing the sources
-with coordinates in separate x, y columns}
-
-\item{target_df}{data.frame containing the targets with coordinates
-in separate x, y columns}
+\item{odm_object}{of type list encompassing a duration and a distance
+matrix, the source and target locations. Created by using either
+\code{calc_odm} or \code{calc_odm_multicore}}
 
 \item{n}{An integer defining the number of minimum values to be
 incorporated}
@@ -23,6 +18,17 @@ incorporated}
 sf object of geometry type point
 }
 \description{
-Create sf object of geometry type point with n minimum distance
-and duration values for each source to target combination
+Creates sf of geometry type point for each source feature with
+    the minimum distance and duration values to n nearest target features.
+}
+\examples{
+data(testdata)
+od_result <- testdata$od_result
+Use e.g. n = 3
+output_sf <- create_time_distance_n_sf(odm_object = od_result, n = 3)
+}
+\seealso{
+\code{calc_odm()} or \code{calc_odm_multicore()} for odm_object
+    creation and \code{create_time_distance_sf} to calculate only the nearest
+    target location
 }
