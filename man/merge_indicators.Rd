@@ -16,8 +16,20 @@ indicators to be merged}
 }
 \value{
 sf of geometry type polygon including the values of all input
-indicators
+    indicators
 }
 \description{
-merge_indicators
+Merge several indicators which have been aggregated to the same
+    area of interest.
+}
+\examples{
+\dontrun{
+data(testdata)
+merged_sf <- merge_indicators(aoi_sf = testdata$grid_500m,
+                              id_col = "id",
+                              aggregated_sf_1,
+                              aggregated_sf_2,
+                              aggregated_sf_3,
+                              ...)
+}
 }

@@ -21,6 +21,8 @@ a polygon grid with a spatial resolution of 500 meters for aggregation
 purposes is delivered.
 }
 \examples{
+library(dplyr)
+library(sf)
 data(testdata)
 targets_sf <- sf::st_as_sf(testdata$od_result$targets,
     coords = c("x", "y")) \%>\%
@@ -28,7 +30,7 @@ targets_sf <- sf::st_as_sf(testdata$od_result$targets,
     sf::st_transform(3035)
 plot(testdata$grid_500m$geometry, reset = FALSE)
 plot(sf::st_transform(testdata$od_result$sources, 3035)$geom, add = TRUE)
-plot(targets_sf, col = "red", pch = 20, add = T)
+plot(targets_sf, col = "red", pch = 20, add = TRUE)
 }
 \references{
 Land NRW, 2020-11-03

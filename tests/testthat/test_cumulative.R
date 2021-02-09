@@ -30,8 +30,8 @@ test_that("sf objects are created",{
 })
 
 
-# Test whether the output contains the right number of rows
-test_that("output_sf contains the right number of rows", {
+# Test whether the output contains the correct number of rows
+test_that("output_sf contains the correct number of rows", {
   output_sf <- create_cumulative_sf(odm_object = testdata$od_result,
                                     filter_value_type = "distance",
                                     accessibility_filter_value = 500,
@@ -39,8 +39,8 @@ test_that("output_sf contains the right number of rows", {
   expect_identical(nrow(output_sf), nrow(testdata$od_result$sources))
   })
 
-# Test whether the output contains the right number of rows
-test_that("output_sf contains the right number of rows", {
+# Test whether the output contains the correct number of rows
+test_that("output_sf contains the correct number of rows", {
   output_sf <- create_cumulative_sf(odm_object = testdata$od_result,
                                     filter_value_type = "distance",
                                     accessibility_filter_value = 500,

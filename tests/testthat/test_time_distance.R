@@ -13,8 +13,8 @@ test_that("sf objects are created",{
   expect_true( is_sf(output_sf) )
 })
 
-# Test whether the output contains the right number of rows
-test_that("output_sf contains the right number of rows", {
+# Test whether the output contains the correct number of rows
+test_that("output_sf contains the correct number of rows", {
   output_sf <- create_time_distance_sf(odm_object = testdata$od_result)
   expect_equal(nrow(output_sf), nrow(testdata$od_result$sources))
 })

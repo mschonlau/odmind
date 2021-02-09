@@ -34,7 +34,9 @@ target potentials
 \description{
 Calculate an average coverage rate within an area of interest
     by applying a threshold filter to one of the sf (geometry type point)
-    attributes \code{"Min_Dist"} or \code{"Min_Time"}
+    attributes \code{"Min_Dist"} or \code{"Min_Time"}. A source location
+    is defined as covered if a target location is accessible within the
+    threshold distance or time.
 }
 \examples{
 data(testdata)
