@@ -6,7 +6,7 @@
 Installing
 ------------
 
-The package is not yet available from CRAN, but you can install the
+The package is not yet deployed to CRAN, but you can install the
 development version directly from GitHub.
 
     # install.packages("remotes")
