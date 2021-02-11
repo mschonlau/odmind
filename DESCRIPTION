@@ -13,7 +13,7 @@ Description: Provides functions to create origin-destination
     several functions for calculating accessibility indicators for point
     data as well as aggregation methods to polygon areas of interest are
     available.
-License: GPL (>= 3)
+License: GPL-3 + file LICENSE
 URL: https://mschonlau.github.io/odmind/index.html
 BugReports: https://github.com/mschonlau/odmind/issues
 Depends: 
