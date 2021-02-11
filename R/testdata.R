@@ -30,5 +30,5 @@
 #'   sf::st_transform(3035)
 #' plot(testdata$grid_500m$geometry, reset = FALSE)
 #' plot(sf::st_transform(testdata$od_result$sources, 3035)$geom, add = TRUE)
-#' plot(targets_sf, col = "red", pch = 20, add = TRUE)
+#' plot(targets_sf$geometry, col = "red", pch = 20, add = TRUE)
 "testdata"

@@ -29,8 +29,10 @@ Creates sf of geometry type point for each source feature with
 \examples{
 data(testdata)
 od_result <- testdata$od_result
-output_sf <- create_time_distance_n_by_cat_sf(odm_object = od_result,
-    filter_attribute = "category", filter_value = "A", n = 3)
+output_sf <- create_time_distance_n_by_cat_sf(
+  odm_object = od_result,
+  filter_attribute = "category", filter_value = "A", n = 3
+)
 }
 \seealso{
 \code{calc_odm()} or \code{calc_odm_multicore()} for odm_object

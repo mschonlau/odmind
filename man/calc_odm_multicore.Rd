@@ -41,15 +41,18 @@ sources <- testdata$od_result$sources
 targets <- testdata$od_result$targets
 # The testdata dataset is too small to generate time benefits out of using
 # parallel processing. It should be applied to larger datasets
-max_chunk_size <-  200 # depends on the config of the OpenRouteService server
-ors_url = "SERVER URL"
-cl <- makeCluster(detectCores()-1)
+max_chunk_size <- 200 # depends on the config of the OpenRouteService server
+ors_url <- "SERVER URL"
+cl <- makeCluster(detectCores() - 1)
 registerDoSNOW(cl)
-res <- calc_odm_multicore(profile_string = "foot-walking",
-                          source_locations = sources,
-                          target_locations = targets,
-                          max_chunk_size = max_chunk_size,
-                          ors_url = ors_url)}
+res <- calc_odm_multicore(
+  profile_string = "foot-walking",
+  source_locations = sources,
+  target_locations = targets,
+  max_chunk_size = max_chunk_size,
+  ors_url = ors_url
+)
+}
 }
 \seealso{
 \code{calc_odm()} for sequential odm_object creation with one core

@@ -32,10 +32,12 @@ Creates sf of geometry type point with a count of features
 \examples{
 data(testdata)
 od_result <- testdata$od_result
-output_sf <- create_cumulative_sf(odm_object = od_result,
-                                  filter_value_type = "distance",
-                                  accessibility_filter_value = 750,
-                                  search_direction = "to_target")
+output_sf <- create_cumulative_sf(
+  odm_object = od_result,
+  filter_value_type = "distance",
+  accessibility_filter_value = 750,
+  search_direction = "to_target"
+)
 }
 \seealso{
 \code{calc_odm()} or \code{calc_odm_multicore()} for odm_object

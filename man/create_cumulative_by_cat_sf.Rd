@@ -39,12 +39,14 @@ Creates sf of geometry type point with a count of features
 \examples{
 data(testdata)
 od_result <- testdata$od_result
-output_sf <- create_cumulative_by_cat_sf(odm_object = od_result,
-                                         filter_value_type = "distance",
-                                         accessibility_filter_value = 750,
-                                         search_direction = "to_target",
-                                         filter_attribute = "category",
-                                         filter_value = "A")
+output_sf <- create_cumulative_by_cat_sf(
+  odm_object = od_result,
+  filter_value_type = "distance",
+  accessibility_filter_value = 750,
+  search_direction = "to_target",
+  filter_attribute = "category",
+  filter_value = "A"
+)
 }
 \seealso{
 \code{calc_odm()} or \code{calc_odm_multicore()} for odm_object
