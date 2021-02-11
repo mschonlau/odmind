@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate n closest distances and durations — create_time_distance_n_sf • odmind</title>
+<title>Origin-Destination Matrix Indicators — odmind • odmind</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="Calculate n closest distances and durations — create_time_distance_n_sf" />
-<meta property="og:description" content="Creates sf of geometry type point for each source feature with
-    the minimum distance and duration values to n nearest target features." />
+<meta property="og:title" content="Origin-Destination Matrix Indicators — odmind" />
+<meta property="og:description" content="Calculate Origin-Destination Matrix Accessibility Indicators" />
 
 
 
@@ -121,55 +120,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate n closest distances and durations</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mschonlau/odmind/blob/master/R/create_time_distance_n_sf.R'><code>R/create_time_distance_n_sf.R</code></a></small>
-    <div class="hidden name"><code>create_time_distance_n_sf.Rd</code></div>
+    <h1>Origin-Destination Matrix Indicators</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mschonlau/odmind/blob/master/R/odmind.R'><code>R/odmind.R</code></a></small>
+    <div class="hidden name"><code>odmind.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates sf of geometry type point for each source feature with
-    the minimum distance and duration values to n nearest target features.</p>
+    <p>Calculate Origin-Destination Matrix Accessibility Indicators</p>
     </div>
 
-    <pre class="usage"><span class='fu'>create_time_distance_n_sf</span><span class='op'>(</span><span class='va'>odm_object</span>, <span class='va'>n</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>odm_object</th>
-      <td><p>of type list encompassing a duration and a distance
-matrix, the source and target locations. Created by using either
-<code>calc_odm</code> or <code>calc_odm_multicore</code></p></td>
-    </tr>
-    <tr>
-      <th>n</th>
-      <td><p>An integer defining the number of minimum values to be
-incorporated</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>sf object of geometry type point</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='calc_odm.html'>calc_odm()</a></code> or <code><a href='calc_odm_multicore.html'>calc_odm_multicore()</a></code> for odm_object
-    creation and <code><a href='create_time_distance_sf.html'>create_time_distance_sf()</a></code> to calculate only the
-    nearest target location</p></div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>testdata</span><span class='op'>)</span>
-<span class='va'>od_result</span> <span class='op'>&lt;-</span> <span class='va'>testdata</span><span class='op'>$</span><span class='va'>od_result</span>
-<span class='co'># Use e.g. n = 3</span>
-<span class='va'>output_sf</span> <span class='op'>&lt;-</span> <span class='fu'>create_time_distance_n_sf</span><span class='op'>(</span>odm_object <span class='op'>=</span> <span class='va'>od_result</span>, n <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>New names:</span>
-#&gt; <span class='message'>* `` -&gt; ...1</span>
-#&gt; <span class='message'>* `` -&gt; ...2</span>
-#&gt; <span class='message'>* `` -&gt; ...3</span></div><div class='output co'>#&gt; <span class='message'>New names:</span>
-#&gt; <span class='message'>* `` -&gt; ...1</span>
-#&gt; <span class='message'>* `` -&gt; ...2</span>
-#&gt; <span class='message'>* `` -&gt; ...3</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "target_id_1"</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "target_id_2"</span></div><div class='output co'>#&gt; <span class='message'>Joining, by = "target_id_3"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
