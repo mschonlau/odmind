@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/mschonlau/odmind/branch/master/graph/badge.svg?token=XEXF4GC575)](https://codecov.io/gh/mschonlau/odmind)
+![R-CMD-check](https://github.com/mschonlau/odmind/workflows/R-CMD-check/badge.svg?branch=master)
 ------------
 # Calculate Origin-Destination Matrix Accessibility Indicators
 
