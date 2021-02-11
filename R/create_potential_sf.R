@@ -1,4 +1,4 @@
-#' @title create_potential_sf
+#' @title Calculate distance or time weighted potential
 #'
 #' @description Creates sf of geometry type point with a weighted value
 #'     of features that match the applied time or distance filter

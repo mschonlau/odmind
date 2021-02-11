@@ -1,4 +1,4 @@
-#' @title aggregate_accumulation
+#' @title Aggregate accumulation indicators
 #'
 #' @description Aggregate the sf (geometry type point) attribute
 #'     \code{"MeanCnt"} or \code{"MedianCnt"} to an area of interest

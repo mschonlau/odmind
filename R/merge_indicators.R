@@ -1,4 +1,4 @@
-#' @title merge_indicators
+#' @title Merge indicators
 #'
 #' @description Merge several indicators which have been aggregated to the same
 #'     area of interest.

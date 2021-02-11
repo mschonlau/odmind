@@ -1,4 +1,4 @@
-#' @title aggregate_potential
+#' @title Aggregate potential indicators
 #'
 #' @description Aggregate the sf (geometry type point) attributes
 #'     \code{"MeanPot"} and \code{"MedianPot"} to an area of interest

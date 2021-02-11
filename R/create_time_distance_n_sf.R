@@ -1,4 +1,4 @@
-#' @title create_time_distance_n_sf
+#' @title  Calculate n closest distances and durations
 #'
 #' @description Creates sf of geometry type point for each source feature with
 #'     the minimum distance and duration values to n nearest target features.

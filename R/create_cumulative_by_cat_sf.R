@@ -1,4 +1,4 @@
-#' @title create_cumulative_by_cat_sf
+#' @title Calculate distance or time related counts by category
 #'
 #' @description Creates sf of geometry type point with a count of features
 #'     that belong to a specific category and match the applied time or distance

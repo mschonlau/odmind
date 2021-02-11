@@ -1,4 +1,4 @@
-#' @title aggregate_expenses
+#' @title Aggregate travel expenses
 #'
 #' @description Aggregate the sf (geometry type point) attributes
 #'     \code{"Min_Dist"} and \code{"Min_Time"} to an area of interest

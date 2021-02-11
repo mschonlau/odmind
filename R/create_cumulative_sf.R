@@ -1,4 +1,4 @@
-#' @title create_cumulative_sf
+#' @title Calculate distance or time related counts
 #'
 #' @description Creates sf of geometry type point with a count of features
 #'     that match the applied time or distance filter

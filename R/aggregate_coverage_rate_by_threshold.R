@@ -1,4 +1,4 @@
-#' @title aggregate_coverage_rate_by_threshold
+#' @title Aggregate coverage rate
 #'
 #' @description Calculate an average coverage rate within an area of interest
 #'     by applying a threshold filter to one of the sf (geometry type point)

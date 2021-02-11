@@ -1,4 +1,4 @@
-#' @title create_potential_by_cat_sf
+#' @title Calculate distance or time weighted potential by category
 #'
 #' @description Creates sf of geometry type point with a weighted value
 #'     of features belonging to a specific category that match the applied time

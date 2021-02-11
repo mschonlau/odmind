@@ -1,4 +1,4 @@
-#' @title create_time_distance_by_cat_sf
+#' @title  Calculate closest distance and duration by category
 #'
 #' @description Creates sf of geometry type point for each source feature with
 #'     the minimum distance and duration values to the nearest target feature
