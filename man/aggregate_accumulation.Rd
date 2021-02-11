@@ -2,7 +2,7 @@
 % Please edit documentation in R/aggregate_accumulation.R
 \name{aggregate_accumulation}
 \alias{aggregate_accumulation}
-\title{aggregate_accumulation}
+\title{Aggregate accumulation indicators}
 \usage{
 aggregate_accumulation(aoi_sf, pnt_sf, id_col, crs = 4647)
 }

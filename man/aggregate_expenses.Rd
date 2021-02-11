@@ -2,7 +2,7 @@
 % Please edit documentation in R/aggregate_expenses.R
 \name{aggregate_expenses}
 \alias{aggregate_expenses}
-\title{aggregate_expenses}
+\title{Aggregate travel expenses}
 \usage{
 aggregate_expenses(aoi_sf, pnt_sf, id_col, crs = 4647)
 }

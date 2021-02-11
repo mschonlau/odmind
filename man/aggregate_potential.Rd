@@ -2,7 +2,7 @@
 % Please edit documentation in R/aggregate_potential.R
 \name{aggregate_potential}
 \alias{aggregate_potential}
-\title{aggregate_potential}
+\title{Aggregate potential indicators}
 \usage{
 aggregate_potential(aoi_sf, pnt_sf, id_col, crs = 4647)
 }

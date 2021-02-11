@@ -2,7 +2,7 @@
 % Please edit documentation in R/merge_indicators.R
 \name{merge_indicators}
 \alias{merge_indicators}
-\title{merge_indicators}
+\title{Merge indicators}
 \usage{
 merge_indicators(aoi_sf, id_col, ...)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_potential_by_cat_sf.R
 \name{create_potential_by_cat_sf}
 \alias{create_potential_by_cat_sf}
-\title{create_potential_by_cat_sf}
+\title{Calculate distance or time weighted potential by category}
 \usage{
 create_potential_by_cat_sf(
   odm_object,

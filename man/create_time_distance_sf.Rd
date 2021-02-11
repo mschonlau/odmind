@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_time_distance_sf.R
 \name{create_time_distance_sf}
 \alias{create_time_distance_sf}
-\title{create_time_distance_sf}
+\title{Calculate closest distance and duration}
 \usage{
 create_time_distance_sf(odm_object)
 }

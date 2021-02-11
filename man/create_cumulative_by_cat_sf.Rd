@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_cumulative_by_cat_sf.R
 \name{create_cumulative_by_cat_sf}
 \alias{create_cumulative_by_cat_sf}
-\title{create_cumulative_by_cat_sf}
+\title{Calculate distance or time related counts by category}
 \usage{
 create_cumulative_by_cat_sf(
   odm_object,

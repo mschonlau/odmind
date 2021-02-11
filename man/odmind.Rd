@@ -3,7 +3,7 @@
 \docType{package}
 \name{odmind}
 \alias{odmind}
-\title{odmind}
+\title{Origin-Destination Matrix Indicators}
 \description{
 Calculate Origin-Destination Matrix Accessibility Indicators
 }

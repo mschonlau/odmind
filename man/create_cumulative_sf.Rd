@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_cumulative_sf.R
 \name{create_cumulative_sf}
 \alias{create_cumulative_sf}
-\title{create_cumulative_sf}
+\title{Calculate distance or time related counts}
 \usage{
 create_cumulative_sf(
   odm_object,

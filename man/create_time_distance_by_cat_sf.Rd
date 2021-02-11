@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_time_distance_by_cat_sf.R
 \name{create_time_distance_by_cat_sf}
 \alias{create_time_distance_by_cat_sf}
-\title{create_time_distance_by_cat_sf}
+\title{Calculate closest distance and duration by category}
 \usage{
 create_time_distance_by_cat_sf(odm_object, filter_attribute, filter_value)
 }

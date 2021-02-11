@@ -2,7 +2,7 @@
 % Please edit documentation in R/aggregate_coverage_rate_by_threshold.R
 \name{aggregate_coverage_rate_by_threshold}
 \alias{aggregate_coverage_rate_by_threshold}
-\title{aggregate_coverage_rate_by_threshold}
+\title{Aggregate coverage rate}
 \usage{
 aggregate_coverage_rate_by_threshold(
   aoi_sf,
