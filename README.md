@@ -18,4 +18,4 @@ By default the free public services at <api.openrouteservice.org> would be used.
 
 Get started
 ------------
-See the [vignette](https://mschonlau.github.io/odmind/)
+Take a look at the [package website](https://mschonlau.github.io/odmind/) and checkout the [introduction vignette](https://mschonlau.github.io/odmind/articles/Introduction%20to%20odmind.html).
