@@ -14,7 +14,7 @@ development version directly from GitHub.
 
 Requirements
 ------------
-By default the free public services at <api.openrouteservice.org> would be used.  A local or a hosted instance might be preferable in order to perform larger unlimited requests. The default plan for the public service is 500 requests per day @40 requests per minute. See [[openrouteservice.org](https://openrouteservice.org/) for more detailed information.
+By default the free public services at <api.openrouteservice.org> would be used.  A local or a hosted instance might be preferable in order to perform larger unlimited requests. The default plan for the public service is 500 requests per day @40 requests per minute. See [openrouteservice.org](https://openrouteservice.org/) for more detailed information.
 
 Get started
 ------------
