@@ -85,11 +85,13 @@ odm_result <- calc_odm(profile_string = "foot-walking",
 or in parallel by using
 
 ```{r eval=FALSE, include=TRUE}
-cl <- parallel::makeCluster(parallel::detectCores()-1)
-doSNOW::registerDoSNOW(cl)
-odm_result <- calc_odm_multicore(profile_string = "foot-walking",
-                          source_locations = sources,
-                          target_locations = targets,
+handlers(global = TRUE)
+handlers("progress")
+registerDoFuture()
+plan(multisession, gc = TRUE)
+res <- calc_odm_multicore(profile_string = "foot-walking",
+                          sources = sources,
+                          targets = targets,
                           max_chunk_size = 200,
                           ors_url = "PUT YOUR URL HERE")
 ```
