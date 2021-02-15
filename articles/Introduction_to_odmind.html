@@ -272,11 +272,13 @@
                        max_chunk_size <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></code></pre></div>
 <p>or in parallel by using</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">makeCluster</a></span><span class="op">(</span><span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html">detectCores</a></span><span class="op">(</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span>
-<span class="fu">doSNOW</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/doSNOW/man/registerDoSNOW.html">registerDoSNOW</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span>
-<span class="va">odm_result</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calc_odm_multicore.html">calc_odm_multicore</a></span><span class="op">(</span>profile_string <span class="op">=</span> <span class="st">"foot-walking"</span>,
-                          source_locations <span class="op">=</span> <span class="va">sources</span>,
-                          target_locations <span class="op">=</span> <span class="va">targets</span>,
+<code class="sourceCode R"><span class="fu">handlers</span><span class="op">(</span>global <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">handlers</span><span class="op">(</span><span class="st">"progress"</span><span class="op">)</span>
+<span class="fu">registerDoFuture</span><span class="op">(</span><span class="op">)</span>
+<span class="fu">plan</span><span class="op">(</span><span class="va">multisession</span>, gc <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calc_odm_multicore.html">calc_odm_multicore</a></span><span class="op">(</span>profile_string <span class="op">=</span> <span class="st">"foot-walking"</span>,
+                          sources <span class="op">=</span> <span class="va">sources</span>,
+                          targets <span class="op">=</span> <span class="va">targets</span>,
                           max_chunk_size <span class="op">=</span> <span class="fl">200</span>,
                           ors_url <span class="op">=</span> <span class="st">"PUT YOUR URL HERE"</span><span class="op">)</span></code></pre></div>
 </div>
