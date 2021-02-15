@@ -27,10 +27,11 @@
 #' registerDoFuture()
 #' plan(multisession, gc = TRUE)
 #' ors_url <- "SERVER URL"
-#' res <- calc_odm(sources = sources,
-#'                 targets = targets,
-#'                 max_chunk_size = 200,
-#'                 ors_url = ors_url)
+#' res <- calc_odm_multicore(profile_string = "foot-walking",
+#'                           sources = sources,
+#'                           targets = targets,
+#'                           max_chunk_size = 200,
+#'                           ors_url = ors_url)
 #' }
 #' @seealso \code{calc_odm()} for sequential odm_object creation with one core
 #' @export
