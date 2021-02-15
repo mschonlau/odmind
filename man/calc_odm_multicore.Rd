@@ -2,23 +2,17 @@
 % Please edit documentation in R/calc_odm_multicore.R
 \name{calc_odm_multicore}
 \alias{calc_odm_multicore}
-\title{calc_odm (multicore)}
+\title{calc_odm_multicore (multicore)}
 \usage{
-calc_odm_multicore(
-  profile_string,
-  source_locations,
-  target_locations,
-  max_chunk_size,
-  ors_url
-)
+calc_odm_multicore(profile_string, sources, targets, max_chunk_size, ors_url)
 }
 \arguments{
 \item{profile_string}{Route profile}
 
-\item{source_locations}{sf object of geometry type point containing the
+\item{sources}{sf object of geometry type point containing the
 sources with coordinates in separate x, y columns}
 
-\item{target_locations}{data.frame containing the targets with coordinates
+\item{targets}{data.frame containing the targets with coordinates
 in separate x, y columns}
 
 \item{max_chunk_size}{integer value defining the maximum number of source
@@ -36,22 +30,21 @@ sources and targets (multicore)
 }
 \examples{
 \dontrun{
+handlers(global = TRUE)
+handlers("progress")
 data(testdata)
 sources <- testdata$od_result$sources
 targets <- testdata$od_result$targets
 # The testdata dataset is too small to generate time benefits out of using
 # parallel processing. It should be applied to larger datasets
 max_chunk_size <- 200 # depends on the config of the OpenRouteService server
+registerDoFuture()
+plan(multisession, gc = TRUE)
 ors_url <- "SERVER URL"
-cl <- makeCluster(detectCores() - 1)
-registerDoSNOW(cl)
-res <- calc_odm_multicore(
-  profile_string = "foot-walking",
-  source_locations = sources,
-  target_locations = targets,
-  max_chunk_size = max_chunk_size,
-  ors_url = ors_url
-)
+res <- calc_odm(sources = sources,
+                targets = targets,
+                max_chunk_size = 200,
+                ors_url = ors_url)
 }
 }
 \seealso{
